@@ -35,11 +35,11 @@ with open('./config/tcp_config.yml') as f:
 top_path_vae_tcp = dic_path['rootPath_VAE_TCP']
 if not top_path_vae_tcp in sys.path:
     sys.path.append(top_path_vae_tcp)
-    
-from tcp_tools.fifo_instance import FIFOInstance
-from tcp_tools.basic_tools import info_show
-# from tcp_tools.vae_manager import VAEManager
-from pythae_ex.models import AutoModel_Ex
+
+from models.svae.svae_model import SoftIntroVAE
+from tools.fifo_instance import FIFOInstance
+from tools.basic_tools import info_show
+from tools.dataset_tcp import NormalizeManager
 
 PATH_VAE_MODEL = os.environ.get('PATH_VAE_MODEL', None)
 FIFO_PATH = os.environ.get('FIFO_PATH', None)
@@ -103,11 +103,18 @@ class TCPAgent(autonomous_agent.AutonomousAgent):
         
         # <====================================================================
         if PATH_VAE_MODEL is not None:
+            self.device = torch.device('cuda:0')
             # Block
             self.fifo_client = FIFOInstance('client', FIFO_PATH)
-            self.vae_model = AutoModel_Ex.load_from_folder(PATH_VAE_MODEL)
-            self.vae_model.to('cuda')
-            self.vae_model.eval()
+            self.vae_manager = SoftIntroVAE(cdim=3, zdim=1024, 
+                                          channels=(64, 128, 256, 512, 512, 512), 
+                                          image_size=(256,900))
+            self.vae_manager.to(self.device)
+            weights = torch.load(PATH_VAE_MODEL, map_location=self.device)
+            self.vae_manager.load_state_dict(weights['model'], strict=False)
+            self.vae_manager.eval()
+            self.norm_manager = NormalizeManager()
+            
             self.pre_control = carla.VehicleControl()
             self.pre_control.steer = 0.0
             self.pre_control.throttle = 0.0
@@ -220,11 +227,12 @@ class TCPAgent(autonomous_agent.AutonomousAgent):
         tick_data = self.tick(input_data)
         # <=========================
         # Send memory address of wide_rgb
-        state = self.VAE_process(tick_data['rgb'])
-        state = state.tobytes()
-        self.fifo_client.write(state)
-        recv_data = self.fifo_client.read()
-        print("recv_data = %s"%recv_data)
+        with torch.no_grad():
+            latent, tick_data = self.__2nd_process(tick_data)
+            latent = latent.tobytes()
+            self.fifo_client.write(latent)
+            recv_data = self.fifo_client.read()
+            print("recv_data = %s"%recv_data)
         # =========================>
         # self.init_count trigger twice sending at the beginning
         if recv_data == b'1' or self.init_count < 3:
@@ -345,28 +353,31 @@ class TCPAgent(autonomous_agent.AutonomousAgent):
 
     def destroy(self):
         del self.net
+        del self.vae_manager
         torch.cuda.empty_cache()
+        self.fifo_client.write('123')
+        self.fifo_client.destroy()
+        print('tcp_agent_destory')
     
-    def VAE_process(self, wide_rgb):
-        # # Construct as a batch
-        # wide_rgb = np.expand_dims(wide_rgb, axis = 0)
-        # # Normalize
-        # wide_rgb = torch.tensor(wide_rgb).permute(0,3,1,2).to('cuda', dtype=torch.float)/127.5 - 1
-        # # narr_array = np.expand_dims(np.transpose(narr_array, (2,0,1)), axis = 0)
-        # normalize (0, 255) to (-2.x, 2.x)
-        wide_rgb = self._im_transform(wide_rgb).unsqueeze(0).to('cuda', dtype=torch.float32)
+    def __2nd_process(self, tick_data):
+        o_cond = None
+            
+        # Change the channel from H*W*C to C*H*W
+        rgb = torch.tensor(tick_data['rgb']).to(self.device, dtype=torch.float32).permute(2, 0, 1)
+        # Change range to [0, 1]
+        rgb = rgb.unsqueeze(0) / 255
+        rgb = self.norm_manager.norm(rgb)
+        # info_show(rgb, '2nd_rgb')
+        real_mu, real_logvar, z, rgb_recon = self.vae_manager.forward(rgb, o_cond, deterministic=True)
+        # For saving
+        # tick_data['rgb'] = self.norm_manager.image_2_rawImage(rgb_recon)
+        # info_show(rgb_recon, '2nd_rgb_recon')
+        # rgb_recon = self.norm_manager.realBatch_2_tcpBatch(rgb_recon)
+        real_std = torch.exp(0.5*real_logvar)
         
-        encoder_output = self.vae_model.encoder(wide_rgb)
-        mu, log_var = encoder_output.embedding, encoder_output.log_covariance
-        std = torch.exp(0.5 * log_var)
+        real_mu = np.float32(real_mu.cpu().detach())
+        real_std = np.float32(real_std.cpu().detach())
+        # latent: 2 * 1024
+        latent = np.vstack((real_mu, real_std))
         
-        mu = mu.cpu().detach()
-        std = std.cpu().detach()
-        
-        mu = np.float32(mu)
-        std = np.float32(std)
-        
-        state = np.vstack((mu, std))
-        print(state.shape)
-        return state
-    
+        return latent, tick_data

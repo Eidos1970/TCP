@@ -1,3 +1,4 @@
+
 #!/usr/bin/env python
 
 # Copyright (c) 2018-2020 Intel Corporation
@@ -8,10 +9,8 @@
 """
 This module provides all atomic evaluation criteria required to analyze if a
 scenario was completed successfully or failed.
-
 Criteria should run continuously to monitor the state of a single actor, multiple
 actors or environmental parameters. Hence, a termination is not required.
-
 The atomic criteria are implemented with py_trees.
 """
 
@@ -34,7 +33,6 @@ class Criterion(py_trees.behaviour.Behaviour):
 
     """
     Base class for all criteria used to evaluate a scenario for success/failure
-
     Important parameters (PUBLIC):
     - name: Name of the criterion
     - expected_value_success:    Result in case of success
@@ -86,7 +84,6 @@ class MaxVelocityTest(Criterion):
 
     """
     This class contains an atomic test for maximum velocity.
-
     Important parameters:
     - actor: CARLA actor to be used for this test
     - max_velocity_allowed: maximum allowed velocity in m/s
@@ -129,7 +126,6 @@ class DrivenDistanceTest(Criterion):
 
     """
     This class contains an atomic test to check the driven distance
-
     Important parameters:
     - actor: CARLA actor to be used for this test
     - distance_success: If the actor's driven distance is more than this value (in meters),
@@ -205,7 +201,6 @@ class AverageVelocityTest(Criterion):
 
     """
     This class contains an atomic test for average velocity.
-
     Important parameters:
     - actor: CARLA actor to be used for this test
     - avg_velocity_success: If the actor's average velocity is more than this value (in m/s),
@@ -288,7 +283,6 @@ class CollisionTest(Criterion):
 
     """
     This class contains an atomic test for collisions.
-
     Args:
     - actor (carla.Actor): CARLA actor to be used for this test
     - other_actor (carla.Actor): only collisions with this actor will be registered
@@ -561,7 +555,6 @@ class KeepLaneTest(Criterion):
 
     """
     This class contains an atomic test for keeping lane.
-
     Important parameters:
     - actor: CARLA actor to be used for this test
     - optional [optional]: If True, the result is not considered for an overall pass/fail result
@@ -618,11 +611,9 @@ class KeepLaneTest(Criterion):
 
 
 class ReachedRegionTest(Criterion):
-
     """
     This class contains the reached region test
     The test is a success if the actor reaches a specified region
-
     Important parameters:
     - actor: CARLA actor to be used for this test
     - min_x, max_x, min_y, max_y: Bounding box of the checked region
@@ -674,7 +665,6 @@ class OffRoadTest(Criterion):
     Atomic containing a test to detect when an actor deviates from the driving lanes. This atomic can
     fail when actor has spent a specific time outside driving lanes (defined by OpenDRIVE). Simplified
     version of OnSidewalkTest, and doesn't relly on waypoints with *Sidewalk* lane types
-
     Args:
         actor (carla.Actor): CARLA actor to be used for this test
         duration (float): Time spent at sidewalks before the atomic fails.
@@ -703,7 +693,6 @@ class OffRoadTest(Criterion):
         First, transforms the actor's current position to its corresponding waypoint. This is
         filtered to only use waypoints of type Driving or Parking. Depending on these results,
         the actor will be considered to be outside (or inside) driving lanes.
-
         returns:
             py_trees.common.Status.FAILURE: when the actor has spent a given duration outside driving lanes
             py_trees.common.Status.RUNNING: the rest of the time
@@ -753,7 +742,6 @@ class EndofRoadTest(Criterion):
 
     """
     Atomic containing a test to detect when an actor has changed to a different road
-
     Args:
         actor (carla.Actor): CARLA actor to be used for this test
         duration (float): Time spent after ending the road before the atomic fails.
@@ -782,7 +770,6 @@ class EndofRoadTest(Criterion):
         """
         First, transforms the actor's current position to its corresponding waypoint. Then the road id
         is compared with the initial one and if that's the case, a time is started
-
         returns:
             py_trees.common.Status.FAILURE: when the actor has spent a given duration outside driving lanes
             py_trees.common.Status.RUNNING: the rest of the time
@@ -823,7 +810,6 @@ class OnSidewalkTest(Criterion):
     """
     Atomic containing a test to detect sidewalk invasions of a specific actor. This atomic can
     fail when actor has spent a specific time outside driving lanes (defined by OpenDRIVE).
-
     Args:
         actor (carla.Actor): CARLA actor to be used for this test
         duration (float): Time spent at sidewalks before the atomic fails.
@@ -859,7 +845,6 @@ class OnSidewalkTest(Criterion):
         First, transforms the actor's current position as well as its four corners to their
         corresponding waypoints. Depending on their lane type, the actor will be considered to be
         outside (or inside) driving lanes.
-
         returns:
             py_trees.common.Status.FAILURE: when the actor has spent a given duration outside
                 driving lanes and terminate_on_failure is active
@@ -1088,7 +1073,6 @@ class OutsideRouteLanesTest(Criterion):
     """
     Atomic to detect if the vehicle is either on a sidewalk or at a wrong lane. The distance spent outside
     is computed and it is returned as a percentage of the route distance traveled.
-
     Args:
         actor (carla.ACtor): CARLA actor to be used for this test
         route (list [carla.Location, connection]): series of locations representing the route waypoints
@@ -1129,7 +1113,6 @@ class OutsideRouteLanesTest(Criterion):
         """
         Transforms the actor location and its four corners to waypoints. Depending on its types,
         the actor will be considered to be at driving lanes, sidewalk or offroad.
-
         returns:
             py_trees.common.Status.FAILURE: when the actor has left driving and terminate_on_failure is active
             py_trees.common.Status.RUNNING: the rest of the time
@@ -1293,7 +1276,6 @@ class WrongLaneTest(Criterion):
 
     """
     This class contains an atomic test to detect invasions to wrong direction lanes.
-
     Important parameters:
     - actor: CARLA actor to be used for this test
     - optional [optional]: If True, the result is not considered for an overall pass/fail result
@@ -1467,7 +1449,6 @@ class InRadiusRegionTest(Criterion):
 
     """
     The test is a success if the actor is within a given radius of a specified region
-
     Important parameters:
     - actor: CARLA actor to be used for this test
     - x, y, radius: Position (x,y) and radius (in meters) used to get the checked region
@@ -1516,7 +1497,6 @@ class InRouteTest(Criterion):
     """
     The test is a success if the actor is never outside route. The actor can go outside of the route
     but only for a certain amount of distance
-
     Important parameters:
     - actor: CARLA actor to be used for this test
     - route: Route to be checked
@@ -1662,7 +1642,6 @@ class RouteCompletionTest(Criterion):
 
     """
     Check at which stage of the route is the actor at each tick
-
     Important parameters:
     - actor: CARLA actor to be used for this test
     - route: Route to be checked
@@ -1767,7 +1746,6 @@ class RunningRedLightTest(Criterion):
 
     """
     Check if an actor is running a red light
-
     Important parameters:
     - actor: CARLA actor to be used for this test
     - terminate_on_failure [optional]: If True, the complete scenario will terminate upon failure of this test
@@ -1968,7 +1946,6 @@ class RunningStopTest(Criterion):
 
     """
     Check if an actor is running a stop sign
-
     Important parameters:
     - actor: CARLA actor to be used for this test
     - terminate_on_failure [optional]: If True, the complete scenario will terminate upon failure of this test

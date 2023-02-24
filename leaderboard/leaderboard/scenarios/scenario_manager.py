@@ -133,6 +133,7 @@ class ScenarioManager(object):
                 snapshot = world.get_snapshot()
                 if snapshot:
                     timestamp = snapshot.timestamp
+                    # print(timestamp)
             if timestamp:
                 self._tick_scenario(timestamp)
 
@@ -140,6 +141,7 @@ class ScenarioManager(object):
         """
         Run next tick of scenario and the agent and tick the world.
         """
+        # timestamp.elapsed_seconds 自当前episode开始以来的仿真秒数
 
         if self._timestamp_last_run < timestamp.elapsed_seconds and self._running:
             self._timestamp_last_run = timestamp.elapsed_seconds

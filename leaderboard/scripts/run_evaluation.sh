@@ -1,5 +1,5 @@
 #!/bin/bash
-export CARLA_ROOT=/home/eidos/Workspace/CARLA/world_on_rails/CARLA_0.9.10.1
+export CARLA_ROOT=/home/dell/carla
 export CARLA_SERVER=${CARLA_ROOT}/CarlaUE4.sh
 export PYTHONPATH=$PYTHONPATH:${CARLA_ROOT}/PythonAPI
 export PYTHONPATH=$PYTHONPATH:${CARLA_ROOT}/PythonAPI/carla
@@ -13,22 +13,23 @@ export CHALLENGE_TRACK_CODENAME=SENSORS
 export PORT=2000
 export TM_PORT=8000
 export DEBUG_CHALLENGE=0
-export REPETITIONS=1 # multiple evaluation runs
+export REPETITIONS=600 # multiple evaluation runs
 export RESUME=False
+export TIMEOUT=50.0
 
 
 # TCP evaluation
-export ROUTES=leaderboard/data/evaluation_routes/routes_lav_valid_1_route.xml
+#export ROUTES=leaderboard/data/evaluation_routes/routes_lav_tst.xml
+export ROUTES=leaderboard/data/evaluation_routes/routes_lav_tst.xml
 export TEAM_AGENT=team_code/tcp_agent.py
-export TEAM_CONFIG=/home/eidos/Workspace/Playground/0_storage/TCP_agent/epoch=59-last.ckpt
+export TEAM_CONFIG=/home/dell/TCP-gym/log/epoch=59-last.ckpt
 export CHECKPOINT_ENDPOINT=results_TCP.json
 export SCENARIOS=leaderboard/data/scenarios/all_towns_traffic_scenarios.json
 #export SAVE_PATH=data/results_TCP/
-
 # VAE_TCP
-export PATH_VAE_MODEL=/home/eidos/Workspace/Playground/0_storage/TCP_VAE_model/VAE_TCP/VAE_TCP_training_2022-11-11_16-19-03/final_model
+export PATH_VAE_MODEL=/home/dell/TCP-gym/log/svae_rec_kl_20ep.pth
 # Gym
-export FIFO_PATH=/home/eidos/Workspace/GitKraken_ws/meta_driving/fifo_space
+export FIFO_PATH=/home/dell/meta_driving/fifo_space
 
 python3 ${LEADERBOARD_ROOT}/leaderboard/leaderboard_evaluator.py \
 --scenarios=${SCENARIOS}  \
@@ -42,6 +43,6 @@ python3 ${LEADERBOARD_ROOT}/leaderboard/leaderboard_evaluator.py \
 --record=${RECORD_PATH} \
 --resume=${RESUME} \
 --port=${PORT} \
---trafficManagerPort=${TM_PORT}
-
+--trafficManagerPort=${TM_PORT} \
+--timeout=${TIMEOUT}
 

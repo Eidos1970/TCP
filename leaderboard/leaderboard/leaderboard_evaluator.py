@@ -350,6 +350,7 @@ class LeaderboardEvaluator(object):
             self._load_and_wait_for_world(args, config.town, config.ego_vehicles)
             self._prepare_ego_vehicles(config.ego_vehicles, False)
             scenario = RouteScenario(world=self.world, config=config, debug_mode=args.debug)
+            # print(scenario.scenario)
             self.statistics_manager.set_scenario(scenario.scenario)
 
             # self.agent_instance._init()
@@ -388,7 +389,7 @@ class LeaderboardEvaluator(object):
         # try:
         self.manager.run_scenario()
 
-        # except AgentError as e:
+        # except AgentError as :
         #     # The agent has failed -> stop the route
         #     print("\n\033[91mStopping the route, the agent has crashed:")
         #     print("> {}\033[0m\n".format(e))
@@ -481,7 +482,7 @@ def main():
     parser.add_argument('--debug', type=int, help='Run with debug output', default=0)
     parser.add_argument('--record', type=str, default='',
                         help='Use CARLA recording feature to create a recording of the scenario')
-    parser.add_argument('--timeout', default="200.0",
+    parser.add_argument('--timeout', default="20.0",
                         help='Set the CARLA client timeout value in seconds')
 
     # simulation setup

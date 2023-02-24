@@ -13,6 +13,7 @@ It shall be used from the ScenarioManager only.
 from __future__ import print_function
 
 import time
+import socket
 from tabulate import tabulate
 
 
@@ -35,8 +36,16 @@ class ResultOutputProvider(object):
                                          time.localtime(self._data.start_system_time))
         self._end_time = time.strftime('%Y-%m-%d %H:%M:%S',
                                        time.localtime(self._data.end_system_time))
+        self.timeout_check = None
+        self.RouteCompletion_check = None
+        
+        self.udp_client_1 = UDPClient(server_port = 12007)
+        self.udp_client_2 = UDPClient(server_port = 12006)
 
         print(self.create_output_text())
+        self.udp_client_1.send(self.timeout_check)
+        self.udp_client_2.send(self.RouteCompletion_check)
+        
 
     def create_output_text(self):
         """
@@ -82,6 +91,7 @@ class ResultOutputProvider(object):
 
             if name == "RouteCompletionTest":
                 actual_value = str(actual_value) + " %"
+                self.RouteCompletion_check = str(actual_value)
             elif name == "OutsideRouteLanesTest":
                 actual_value = str(actual_value) + " %"
             elif name == "CollisionTest":
@@ -107,10 +117,32 @@ class ResultOutputProvider(object):
             result = '\033[92m'+'SUCCESS'+'\033[0m'
         else:
             result = '\033[91m'+'FAILURE'+'\033[0m'
-
+            self.timeout_check = 'timeout'
         list_statistics.extend([[name, result, '']])
 
         output += tabulate(list_statistics, tablefmt='fancy_grid')
         output += "\n"
 
         return output
+
+class UDPClient:
+    def __init__(self, server_ip: str = '127.0.0.1', server_port: int = 12000):
+        self.BUFSIZE = 2048
+        self.server_ip = server_ip
+        self.server_port = server_port
+        self.clientSocket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+    
+    def receive(self) -> str:
+        # server_address is useless here
+        recv_raw_data, server_address = self.clientSocket.recvfrom(self.BUFSIZE)
+        print("Receive message is: ", recv_raw_data.decode('utf-8'))
+        return recv_raw_data.decode('utf-8')
+    
+    def send(self, send_data: str):
+        if not type(send_data) == str:
+            send_data = str(send_data)
+            
+        self.clientSocket.sendto(send_data.encode('utf-8'), (self.server_ip, self.server_port))
+        
+    def destroy(self):
+        self.clientSocket.close()

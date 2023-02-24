@@ -197,6 +197,7 @@ class RouteScenario(BasicScenario):
 
         # Timeout of scenario in seconds
         self.timeout = self._estimate_route_timeout()
+        print("timeout (scenario runner) = %s"%self.timeout)
 
         # Print route in debug mode
         if debug_mode:
