@@ -51,7 +51,7 @@ from models.channel.channel_network import ChannelCodec
 from models.channel.channel_physical import Channels
 from models.jpeg.jpeg_model import JPEG
 from models.j2k.j2k_model import J2K
-from models.tradicom.tradicom_model import TradiCom
+from models.tradicom.tradicom_model import TradiCom, power_norm
 from models.bpg.bpg_model import BPG
 from tools.dataset_tcp import NormalizeManager
 from tools.common_tools import reparameterize
@@ -410,7 +410,7 @@ class TCPAgent(autonomous_agent.AutonomousAgent):
         # VAE Encoding
         img_mu, img_logvar = self.codec.encode(rgb)
         # img_z = reparameterize(img_mu, img_logvar)
-        
+        img_mu = power_norm(img_mu, com_params['jscc']['power'])
         # Adding noise
         if com_params['jscc']['noise_type'] == 'AWGN':
             img_mu_rec = self.channel_phy.awgn(img_mu, com_params['jscc']['snr_db'], com_params['jscc']['power'])

@@ -19,6 +19,7 @@ export RESUME=True
 # TCP evaluation
 # export ROUTES=leaderboard/data/evaluation_routes/routes_lav_valid_1_route_town02_00.xml
 export ROUTES=leaderboard/data/evaluation_routes/routes_lav_valid_town05_second.xml
+# export ROUTES=leaderboard/data/evaluation_routes/routes_lav_valid_town05_first.xml
 # export ROUTES=leaderboard/data/evaluation_routes/routes_lav_valid.xml
 export TEAM_AGENT=team_code/tcp_agent.py
 export TEAM_CONFIG=/home/eidos/Warehouse/Teledriving/TCP_agent/epoch=59-last.ckpt
@@ -30,9 +31,9 @@ export SCENARIOS=leaderboard/data/scenarios/all_towns_traffic_scenarios.json
 # JPEG | J2K | BPG | JSCC | AE
 export MODEL_TYPE=BPG
 # For JPEG and J2K, higher is better. For BPG lower is better.
-export QUALITY=48
+export QUALITY=42
 # Only for JSCC
-export PATH_VAE_MODEL=/home/eidos/Warehouse/Teledriving/model_Infocom2024/VAE/vae_tcp_norm_z4096/vae_model_epoch_10_iter_236910.pth
+export PATH_VAE_MODEL=/home/eidos/Warehouse/Teledriving/model_Infocom2024/VAE/vae_norm_z4096/vae_model_epoch_20_iter_473816.pth
 # Log
 export USE_WANDB=False
 # Gym
