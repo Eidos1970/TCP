@@ -3,7 +3,7 @@
 ![teaser](assets/teaser_.png)
 
 > Trajectory-guided Control Prediction for End-to-end Autonomous Driving: A Simple yet Strong Baseline  
-> Penghao Wu*, [Xiaosong Jia*](https://jiaxiaosong1002.github.io/), Li Chen*, [Junchi Yan](https://thinklab.sjtu.edu.cn/), [Hongyang Li](https://lihongyang.info/), [Yu Qiao](http://mmlab.siat.ac.cn/yuqiao/)    
+> [Penghao Wu*](https://scholar.google.com/citations?user=9mssd5EAAAAJ&hl=en), [Xiaosong Jia*](https://jiaxiaosong1002.github.io/), [Li Chen*](https://scholar.google.com/citations?user=ulZxvY0AAAAJ&hl=en), [Junchi Yan](https://thinklab.sjtu.edu.cn/), [Hongyang Li](https://lihongyang.info/), [Yu Qiao](http://mmlab.siat.ac.cn/yuqiao/)    
 >  - [arXiv Paper](https://arxiv.org/abs/2206.08129), NeurIPS 2022
 >  - [Blog in Chinese](https://zhuanlan.zhihu.com/p/532665469)
 
@@ -45,7 +45,7 @@ export PYTHONPATH=$PYTHONPATH:PATH_TO_TCP
 
 ## Dataset
 
-Download our dataset through [GoogleDrive](https://drive.google.com/file/d/1A6k0KpVHs5eSaqunzbRQR-p0b-915O9R/view?usp=sharing) or [BaiduYun](https://pan.baidu.com/s/11xBZwAWQ3WxQXecuuPoexQ) (提取码 8174). The total size of our dataset is aroung 115G, make sure you have enough space.
+Download our dataset through [GoogleDrive](https://drive.google.com/file/d/1HZxlSZ_wUVWkNTWMXXcSQxtYdT7GogSm/view?usp=sharing) or [BaiduYun](https://pan.baidu.com/s/11xBZwAWQ3WxQXecuuPoexQ) (提取码 8174). The total size of our dataset is aroung 115G, make sure you have enough space.
 
 ## Training
 First, set the dataset path in ``TCP/config.py``.
@@ -88,10 +88,10 @@ sh leaderboard/scripts/run_evaluation.sh
 If you find our repo or our paper useful, please use the following citation:
 
 ```
-@article{wu2022trajectoryguided,
+@inproceedings{wu2022trajectoryguided,
  title={Trajectory-guided Control Prediction for End-to-end Autonomous Driving: A Simple yet Strong Baseline}, 
  author={Penghao Wu and Xiaosong Jia and Li Chen and Junchi Yan and Hongyang Li and Yu Qiao},
- journal={arXiv preprint arXiv:2206.08129},
+ booktitle={NeurIPS},
  year={2022},
 }
 ```
