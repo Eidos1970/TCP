@@ -55,7 +55,7 @@ from models.tradicom.tradicom_model import TradiCom, power_norm
 from models.bpg.bpg_model import BPG
 from tools.dataset_tcp import NormalizeManager
 from tools.common_tools import reparameterize
-from models.ae_ch.ae_model import AE
+from models.ae.ae_model import AE
 # from pythae_ex.models import AutoModel_Ex
 # typing
 from typing import Dict, List, Tuple, Union, Callable, Iterable, Any
@@ -146,7 +146,7 @@ class TCPAgent(autonomous_agent.AutonomousAgent):
                                                 channels=[64, 128, 256, 512, 512, 512], 
                                                 image_size=(256,900))
                 else:
-                    self.codec = AE(cdim=3, zdim=1024, 
+                    self.codec = AE(cdim=3, zdim=com_params['jscc']['zdim'], 
                                 channels=[64, 128, 256, 512, 512, 512], 
                                 image_size=(256,900))
                 self.codec.to(self.device)
@@ -410,8 +410,8 @@ class TCPAgent(autonomous_agent.AutonomousAgent):
         # VAE Encoding
         img_mu, img_logvar = self.codec.encode(rgb)
         # img_z = reparameterize(img_mu, img_logvar)
-        img_mu = power_norm(img_mu, com_params['jscc']['power'])
-        # Adding noise
+        img_mu = power_norm(img_mu, torch.tensor(com_params['jscc']['power']))
+        # Channel
         if com_params['jscc']['noise_type'] == 'AWGN':
             img_mu_rec = self.channel_phy.awgn(img_mu, com_params['jscc']['snr_db'], com_params['jscc']['power'])
         # elif com_params['jscc']['noise_type'] == 'Rayleigh' or com_params['jscc']['noise_type'] == 'Rician':

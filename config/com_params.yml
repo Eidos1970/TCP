@@ -2,7 +2,7 @@
 common: &common
   noise_type: 'AWGN' # AWGN, Rayleigh, Rician
   k_ratio: 0 # For Rayleigh channel
-  snr_db: 10
+  snr_db: 5
 tradicom:
   n_ldpc: 6144
   k_ldpc: 2048

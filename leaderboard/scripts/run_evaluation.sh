@@ -29,11 +29,11 @@ export SCENARIOS=leaderboard/data/scenarios/all_towns_traffic_scenarios.json
 
 # export CUDA_VISIBLE_DEVICES=-1
 # JPEG | J2K | BPG | JSCC | AE
-export MODEL_TYPE=BPG
+export MODEL_TYPE=JSCC
 # For JPEG and J2K, higher is better. For BPG lower is better.
 export QUALITY=42
 # Only for JSCC
-export PATH_VAE_MODEL=/home/eidos/Warehouse/Teledriving/model_Infocom2024/VAE/vae_norm_z4096/vae_model_epoch_20_iter_473816.pth
+export PATH_VAE_MODEL=/home/eidos/Warehouse/Teledriving/model_Infocom2024/VAE/vae_tcp_norm_z4096/vae_model_epoch_20_iter_473820.pth
 # Log
 export USE_WANDB=False
 # Gym
