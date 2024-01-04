@@ -13,7 +13,7 @@ export CHALLENGE_TRACK_CODENAME=SENSORS
 export PORT=2000
 export TM_PORT=8000
 export DEBUG_CHALLENGE=0
-export REPETITIONS=3 # multiple evaluation runs
+export REPETITIONS=1 # multiple evaluation runs
 export RESUME=True
 
 # TCP evaluation
@@ -29,11 +29,11 @@ export SCENARIOS=leaderboard/data/scenarios/all_towns_traffic_scenarios.json
 
 # export CUDA_VISIBLE_DEVICES=-1
 # JPEG | J2K | BPG | JSCC | AE
-export MODEL_TYPE=JSCC
+export MODEL_TYPE=J2K
 # For JPEG and J2K, higher is better. For BPG lower is better.
-export QUALITY=42
+export QUALITY=70
 # Only for JSCC
-export PATH_VAE_MODEL=/home/eidos/Warehouse/Teledriving/model_Infocom2024/VAE/vae_tcp_norm_z4096/vae_model_epoch_20_iter_473820.pth
+export PATH_VAE_MODEL=/home/eidos/Warehouse/Teledriving/model_Infocom2024/VAE/ae_noNorm_snr0/ae_model_epoch_30_iter_355380.pth
 # Log
 export USE_WANDB=False
 # Gym

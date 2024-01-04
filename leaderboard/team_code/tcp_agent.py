@@ -410,7 +410,8 @@ class TCPAgent(autonomous_agent.AutonomousAgent):
         # VAE Encoding
         img_mu, img_logvar = self.codec.encode(rgb)
         # img_z = reparameterize(img_mu, img_logvar)
-        img_mu = power_norm(img_mu, torch.tensor(com_params['jscc']['power']))
+        if com_params['jscc']['use_power_norm']:
+            img_mu = power_norm(img_mu, torch.tensor(com_params['jscc']['power']))
         # Channel
         if com_params['jscc']['noise_type'] == 'AWGN':
             img_mu_rec = self.channel_phy.awgn(img_mu, com_params['jscc']['snr_db'], com_params['jscc']['power'])

@@ -1,0 +1,936 @@
+{
+    "_checkpoint": {
+        "global_record": {
+            "index": -1,
+            "infractions": {
+                "collisions_layout": 0.06537057384776637,
+                "collisions_pedestrian": 0.0,
+                "collisions_vehicle": 2.0877741539257233,
+                "outside_route_lanes": 0.0796931766493022,
+                "red_light": 0.3251768994229148,
+                "route_dev": 0.0,
+                "route_timeout": 0.0,
+                "stop_infraction": 0.38183370784078985,
+                "vehicle_blocked": 0.015367052032928584
+            },
+            "meta": {
+                "exceptions": [
+                    [
+                        "RouteScenario_12",
+                        0,
+                        "Failed - Agent got blocked"
+                    ],
+                    [
+                        "RouteScenario_12",
+                        1,
+                        "Completed"
+                    ],
+                    [
+                        "RouteScenario_12",
+                        2,
+                        "Completed"
+                    ],
+                    [
+                        "RouteScenario_13",
+                        3,
+                        "Completed"
+                    ],
+                    [
+                        "RouteScenario_13",
+                        4,
+                        "Completed"
+                    ],
+                    [
+                        "RouteScenario_13",
+                        5,
+                        "Failed - Agent got blocked"
+                    ],
+                    [
+                        "RouteScenario_14",
+                        6,
+                        "Completed"
+                    ],
+                    [
+                        "RouteScenario_14",
+                        7,
+                        "Completed"
+                    ]
+                ]
+            },
+            "route_id": -1,
+            "scores": {
+                "score_composed": 0.00026719152369454586,
+                "score_penalty": 2.6824283192316943e-06,
+                "score_route": 97.28663734369799
+            },
+            "status": "Failed"
+        },
+        "progress": [
+            12,
+            12
+        ],
+        "records": [
+            {
+                "index": 0,
+                "infractions": {
+                    "collisions_layout": [
+                        "Agent collided against object with type=static.pole and id=0 at (x=72.945, y=75.286, z=0.183)",
+                        "Agent collided against object with type=static.bridge and id=0 at (x=-253.251, y=-74.473, z=0.147)"
+                    ],
+                    "collisions_pedestrian": [],
+                    "collisions_vehicle": [
+                        "Agent collided against object with type=vehicle.diamondback.century and id=225 at (x=50.694, y=2.707, z=0.034)",
+                        "Agent collided against object with type=vehicle.jeep.wrangler_rubicon and id=283 at (x=50.662, y=83.719, z=0.068)",
+                        "Agent collided against object with type=vehicle.jeep.wrangler_rubicon and id=283 at (x=47.753, y=84.658, z=0.03)",
+                        "Agent collided against object with type=vehicle.diamondback.century and id=218 at (x=-55.015, y=110.983, z=0.089)",
+                        "Agent collided against object with type=vehicle.mustang.mustang and id=235 at (x=-116.59, y=147.647, z=0.088)",
+                        "Agent collided against object with type=vehicle.audi.tt and id=317 at (x=-189.477, y=111.329, z=0.093)",
+                        "Agent collided against object with type=vehicle.audi.tt and id=317 at (x=-188.015, y=100.584, z=0.09)",
+                        "Agent collided against object with type=vehicle.audi.tt and id=317 at (x=-187.889, y=74.899, z=0.09)",
+                        "Agent collided against object with type=vehicle.audi.tt and id=317 at (x=-187.884, y=49.212, z=0.089)",
+                        "Agent collided against object with type=vehicle.audi.tt and id=317 at (x=-188.133, y=24.66, z=0.091)",
+                        "Agent collided against object with type=vehicle.audi.tt and id=317 at (x=-188.29, y=15.318, z=0.089)",
+                        "Agent collided against object with type=vehicle.diamondback.century and id=226 at (x=-209.511, y=-2.556, z=0.034)",
+                        "Agent collided against object with type=vehicle.dodge_charger.police and id=233 at (x=-212.555, y=91.262, z=0.035)",
+                        "Agent collided against object with type=vehicle.dodge_charger.police and id=233 at (x=-204.379, y=91.441, z=0.037)",
+                        "Agent collided against object with type=vehicle.dodge_charger.police and id=233 at (x=-178.64, y=91.42, z=0.06)",
+                        "Agent collided against object with type=vehicle.dodge_charger.police and id=233 at (x=-159.724, y=91.531, z=0.035)",
+                        "Agent collided against object with type=vehicle.dodge_charger.police and id=233 at (x=-156.594, y=91.592, z=0.033)",
+                        "Agent collided against object with type=vehicle.nissan.patrol and id=232 at (x=-146.58, y=92.839, z=0.033)",
+                        "Agent collided against object with type=vehicle.nissan.patrol and id=232 at (x=-132.577, y=103.317, z=-0.002)",
+                        "Agent collided against object with type=vehicle.mercedes-benz.coupe and id=234 at (x=-128.791, y=127.372, z=0.03)",
+                        "Agent collided against object with type=vehicle.mercedes-benz.coupe and id=234 at (x=-129.256, y=130.451, z=0.034)",
+                        "Agent collided against object with type=vehicle.mercedes-benz.coupe and id=234 at (x=-145.121, y=146.213, z=0.089)",
+                        "Agent collided against object with type=vehicle.audi.tt and id=317 at (x=-188.075, y=26.833, z=0.089)"
+                    ],
+                    "outside_route_lanes": [
+                        "Agent went outside its route lanes for about 130.694 meters (9.54% of the completed route)"
+                    ],
+                    "red_light": [
+                        "Agent ran a red light 170 at (x=40.25, y=78.6, z=0.0)",
+                        "Agent ran a red light 173 at (x=-61.25, y=76.7, z=0.0)",
+                        "Agent ran a red light 186 at (x=-138.5, y=137.55, z=0.0)"
+                    ],
+                    "route_dev": [],
+                    "route_timeout": [],
+                    "stop_infraction": [
+                        "Agent ran a stop with id=120 at (x=88.839, y=5.521, z=0.0)",
+                        "Agent ran a stop with id=118 at (x=-256.469, y=-0.304, z=0.0)",
+                        "Agent ran a stop with id=114 at (x=-188.036, y=105.516, z=0.055)"
+                    ],
+                    "vehicle_blocked": [
+                        "Agent got blocked at (x=-252.736, y=-75.653, z=0.138)"
+                    ]
+                },
+                "meta": {
+                    "duration_game": 605.5500090233982,
+                    "duration_system": 992.0163848400116,
+                    "route_length": 1554.57833961516,
+                    "total_steps": 12110
+                },
+                "route_id": "RouteScenario_12",
+                "scores": {
+                    "score_composed": 4.429513617324755e-05,
+                    "score_penalty": 5.300680851601841e-07,
+                    "score_route": 83.56499365522407
+                },
+                "status": "Failed - Agent got blocked"
+            },
+            {
+                "index": 1,
+                "infractions": {
+                    "collisions_layout": [],
+                    "collisions_pedestrian": [],
+                    "collisions_vehicle": [
+                        "Agent collided against object with type=vehicle.diamondback.century and id=494 at (x=50.887, y=2.351, z=0.034)",
+                        "Agent collided against object with type=vehicle.jeep.wrangler_rubicon and id=552 at (x=53.95, y=82.749, z=0.083)",
+                        "Agent collided against object with type=vehicle.jeep.wrangler_rubicon and id=596 at (x=-43.681, y=91.766, z=0.055)",
+                        "Agent collided against object with type=vehicle.diamondback.century and id=487 at (x=-55.093, y=110.919, z=0.089)",
+                        "Agent collided against object with type=vehicle.harley-davidson.low_rider and id=512 at (x=-188.71, y=110.548, z=0.088)",
+                        "Agent collided against object with type=vehicle.seat.leon and id=583 at (x=-188.132, y=27.235, z=0.089)",
+                        "Agent collided against object with type=vehicle.seat.leon and id=583 at (x=-191.012, y=7.554, z=0.058)",
+                        "Agent collided against object with type=vehicle.seat.leon and id=583 at (x=-213.031, y=-1.893, z=0.043)",
+                        "Agent collided against object with type=vehicle.seat.leon and id=583 at (x=-237.561, y=-2.127, z=0.049)",
+                        "Agent collided against object with type=vehicle.seat.leon and id=583 at (x=-248.251, y=-2.126, z=0.034)",
+                        "Agent collided against object with type=vehicle.nissan.patrol and id=529 at (x=-154.228, y=91.557, z=0.034)",
+                        "Agent collided against object with type=vehicle.nissan.patrol and id=529 at (x=-151.2, y=91.724, z=0.032)",
+                        "Agent collided against object with type=vehicle.tesla.cybertruck and id=607 at (x=-126.438, y=122.439, z=0.034)",
+                        "Agent collided against object with type=vehicle.tesla.cybertruck and id=607 at (x=-127.389, y=125.3, z=0.052)",
+                        "Agent collided against object with type=vehicle.audi.etron and id=588 at (x=-188.293, y=108.04, z=0.087)",
+                        "Agent collided against object with type=vehicle.audi.etron and id=588 at (x=-187.947, y=84.08, z=0.075)",
+                        "Agent collided against object with type=vehicle.audi.etron and id=588 at (x=-187.862, y=58.983, z=0.089)",
+                        "Agent collided against object with type=vehicle.audi.etron and id=588 at (x=-188.301, y=33.789, z=0.089)",
+                        "Agent collided against object with type=vehicle.audi.etron and id=588 at (x=-188.216, y=23.697, z=0.087)",
+                        "Agent collided against object with type=vehicle.audi.etron and id=588 at (x=-188.084, y=20.534, z=0.088)",
+                        "Agent collided against object with type=vehicle.audi.etron and id=588 at (x=-198.461, y=1.459, z=0.06)",
+                        "Agent collided against object with type=vehicle.diamondback.century and id=470 at (x=-268.379, y=-20.152, z=0.034)",
+                        "Agent collided against object with type=vehicle.nissan.patrol and id=563 at (x=-191.591, y=-24.04, z=0.089)",
+                        "Agent collided against object with type=vehicle.nissan.patrol and id=563 at (x=-191.702, y=43.871, z=0.089)",
+                        "Agent collided against object with type=vehicle.nissan.patrol and id=563 at (x=-191.626, y=69.066, z=0.089)",
+                        "Agent collided against object with type=vehicle.nissan.patrol and id=563 at (x=-191.366, y=72.212, z=0.087)",
+                        "Agent collided against object with type=vehicle.nissan.patrol and id=563 at (x=-176.434, y=89.001, z=0.028)",
+                        "Agent collided against object with type=vehicle.tesla.cybertruck and id=607 at (x=-169.146, y=89.349, z=0.002)",
+                        "Agent collided against object with type=vehicle.tesla.cybertruck and id=607 at (x=-172.218, y=89.709, z=0.036)"
+                    ],
+                    "outside_route_lanes": [
+                        "Agent went outside its route lanes for about 152.665 meters (9.36% of the completed route)"
+                    ],
+                    "red_light": [
+                        "Agent ran a red light 439 at (x=40.25, y=78.6, z=0.0)",
+                        "Agent ran a red light 451 at (x=18.6, y=79.75, z=0.0)",
+                        "Agent ran a red light 442 at (x=-61.25, y=76.7, z=0.0)",
+                        "Agent ran a red light 455 at (x=-138.5, y=137.55, z=0.0)"
+                    ],
+                    "route_dev": [],
+                    "route_timeout": [],
+                    "stop_infraction": [
+                        "Agent ran a stop with id=389 at (x=88.839, y=5.521, z=0.0)",
+                        "Agent ran a stop with id=383 at (x=-188.036, y=105.516, z=0.055)",
+                        "Agent ran a stop with id=387 at (x=-256.469, y=-0.304, z=0.0)",
+                        "Agent ran a stop with id=378 at (x=-205.414, y=91.087, z=0.0)",
+                        "Agent ran a stop with id=383 at (x=-188.036, y=105.516, z=0.055)",
+                        "Agent ran a stop with id=369 at (x=-203.918, y=-84.634, z=0.0)",
+                        "Agent ran a stop with id=377 at (x=-174.012, y=87.973, z=0.0)"
+                    ],
+                    "vehicle_blocked": []
+                },
+                "meta": {
+                    "duration_game": 471.8500070311129,
+                    "duration_system": 758.5934391021729,
+                    "route_length": 1554.57833961516,
+                    "total_steps": 9436
+                },
+                "route_id": "RouteScenario_12",
+                "scores": {
+                    "score_composed": 1.6815797502611148e-06,
+                    "score_penalty": 1.6815797502611148e-08,
+                    "score_route": 100.0
+                },
+                "status": "Completed"
+            },
+            {
+                "index": 2,
+                "infractions": {
+                    "collisions_layout": [],
+                    "collisions_pedestrian": [],
+                    "collisions_vehicle": [
+                        "Agent collided against object with type=vehicle.diamondback.century and id=225 at (x=50.831, y=2.532, z=0.034)",
+                        "Agent collided against object with type=vehicle.jeep.wrangler_rubicon and id=283 at (x=55.889, y=82.443, z=0.109)",
+                        "Agent collided against object with type=vehicle.jeep.wrangler_rubicon and id=283 at (x=49.698, y=83.149, z=0.055)",
+                        "Agent collided against object with type=vehicle.jeep.wrangler_rubicon and id=283 at (x=46.606, y=83.173, z=0.079)",
+                        "Agent collided against object with type=vehicle.mustang.mustang and id=235 at (x=-123.183, y=147.568, z=0.063)",
+                        "Agent collided against object with type=vehicle.dodge_charger.police and id=284 at (x=-144.584, y=147.08, z=0.089)",
+                        "Agent collided against object with type=vehicle.dodge_charger.police and id=284 at (x=-165.264, y=147.637, z=0.103)",
+                        "Agent collided against object with type=vehicle.dodge_charger.police and id=284 at (x=-182.208, y=136.361, z=0.101)",
+                        "Agent collided against object with type=vehicle.dodge_charger.police and id=284 at (x=-189.016, y=116.187, z=0.104)",
+                        "Agent collided against object with type=vehicle.dodge_charger.police and id=284 at (x=-189.21, y=109.731, z=0.11)",
+                        "Agent collided against object with type=vehicle.dodge_charger.police and id=284 at (x=-188.996, y=106.588, z=0.099)",
+                        "Agent collided against object with type=vehicle.dodge_charger.police and id=284 at (x=-189.663, y=96.234, z=0.091)",
+                        "Agent collided against object with type=vehicle.diamondback.century and id=226 at (x=-209.494, y=-2.292, z=0.034)",
+                        "Agent collided against object with type=vehicle.nissan.patrol and id=260 at (x=-154.289, y=91.547, z=0.034)",
+                        "Agent collided against object with type=vehicle.nissan.patrol and id=260 at (x=-151.281, y=91.63, z=0.033)",
+                        "Agent collided against object with type=vehicle.audi.etron and id=319 at (x=-188.474, y=111.214, z=0.089)",
+                        "Agent collided against object with type=vehicle.audi.etron and id=319 at (x=-188.274, y=108.15, z=0.085)",
+                        "Agent collided against object with type=vehicle.audi.etron and id=319 at (x=-188.083, y=83.907, z=0.074)",
+                        "Agent collided against object with type=vehicle.dodge_charger.police and id=233 at (x=-187.98, y=27.589, z=0.089)",
+                        "Agent collided against object with type=vehicle.dodge_charger.police and id=233 at (x=-188.12, y=16.419, z=0.089)",
+                        "Agent collided against object with type=vehicle.dodge_charger.police and id=233 at (x=-203.946, y=-0.62, z=0.033)",
+                        "Agent collided against object with type=vehicle.diamondback.century and id=201 at (x=-267.911, y=-20.17, z=0.034)",
+                        "Agent collided against object with type=vehicle.nissan.patrol and id=294 at (x=-191.514, y=-24.074, z=0.09)",
+                        "Agent collided against object with type=vehicle.nissan.patrol and id=294 at (x=-191.592, y=-21.039, z=0.068)",
+                        "Agent collided against object with type=vehicle.nissan.patrol and id=294 at (x=-191.465, y=-0.626, z=0.063)",
+                        "Agent collided against object with type=vehicle.nissan.patrol and id=294 at (x=-191.531, y=26.603, z=0.089)",
+                        "Agent collided against object with type=vehicle.nissan.patrol and id=294 at (x=-191.656, y=64.379, z=0.089)",
+                        "Agent collided against object with type=vehicle.nissan.patrol and id=294 at (x=-191.592, y=68.884, z=0.088)",
+                        "Agent collided against object with type=vehicle.nissan.patrol and id=294 at (x=-177.579, y=88.94, z=0.038)",
+                        "Agent collided against object with type=vehicle.diamondback.century and id=213 at (x=-165.45, y=94.128, z=0.034)"
+                    ],
+                    "outside_route_lanes": [
+                        "Agent went outside its route lanes for about 96.572 meters (5.92% of the completed route)"
+                    ],
+                    "red_light": [
+                        "Agent ran a red light 170 at (x=40.25, y=78.6, z=0.0)",
+                        "Agent ran a red light 173 at (x=-61.25, y=76.7, z=0.0)",
+                        "Agent ran a red light 186 at (x=-138.5, y=137.55, z=0.0)",
+                        "Agent ran a red light 180 at (x=-179.25, y=-9.7, z=0.0)"
+                    ],
+                    "route_dev": [],
+                    "route_timeout": [],
+                    "stop_infraction": [
+                        "Agent ran a stop with id=120 at (x=88.839, y=5.521, z=0.0)",
+                        "Agent ran a stop with id=118 at (x=-256.469, y=-0.304, z=0.0)",
+                        "Agent ran a stop with id=109 at (x=-205.414, y=91.087, z=0.0)",
+                        "Agent ran a stop with id=100 at (x=-203.918, y=-84.634, z=0.0)"
+                    ],
+                    "vehicle_blocked": []
+                },
+                "meta": {
+                    "duration_game": 441.8500065840781,
+                    "duration_system": 724.3846457004547,
+                    "route_length": 1554.57833961516,
+                    "total_steps": 8836
+                },
+                "route_id": "RouteScenario_12",
+                "scores": {
+                    "score_composed": 2.0453905730460895e-06,
+                    "score_penalty": 2.0453905730460897e-08,
+                    "score_route": 100.0
+                },
+                "status": "Completed"
+            },
+            {
+                "index": 3,
+                "infractions": {
+                    "collisions_layout": [
+                        "Agent collided against object with type=static.bridge and id=0 at (x=-250.125, y=-76.864, z=0.146)"
+                    ],
+                    "collisions_pedestrian": [],
+                    "collisions_vehicle": [
+                        "Agent collided against object with type=vehicle.diamondback.century and id=494 at (x=51.377, y=1.948, z=0.034)",
+                        "Agent collided against object with type=vehicle.jeep.wrangler_rubicon and id=552 at (x=55.235, y=82.472, z=0.111)",
+                        "Agent collided against object with type=vehicle.jeep.wrangler_rubicon and id=552 at (x=44.869, y=83.525, z=0.035)",
+                        "Agent collided against object with type=vehicle.seat.leon and id=583 at (x=-187.975, y=27.122, z=0.089)",
+                        "Agent collided against object with type=vehicle.seat.leon and id=583 at (x=-191.0, y=7.631, z=0.058)",
+                        "Agent collided against object with type=vehicle.diamondback.century and id=495 at (x=-209.728, y=-1.548, z=0.034)",
+                        "Agent collided against object with type=vehicle.seat.leon and id=583 at (x=-223.659, y=-0.553, z=0.034)",
+                        "Agent collided against object with type=vehicle.seat.leon and id=583 at (x=-249.002, y=-0.326, z=0.033)",
+                        "Agent collided against object with type=vehicle.seat.leon and id=583 at (x=-267.644, y=4.593, z=0.034)",
+                        "Agent collided against object with type=vehicle.seat.leon and id=583 at (x=-272.178, y=26.748, z=0.034)",
+                        "Agent collided against object with type=vehicle.seat.leon and id=583 at (x=-271.836, y=54.118, z=0.033)",
+                        "Agent collided against object with type=vehicle.seat.leon and id=583 at (x=-267.347, y=79.917, z=0.04)",
+                        "Agent collided against object with type=vehicle.seat.leon and id=583 at (x=-244.128, y=90.665, z=0.036)",
+                        "Agent collided against object with type=vehicle.seat.leon and id=583 at (x=-216.959, y=90.987, z=0.034)",
+                        "Agent collided against object with type=vehicle.seat.leon and id=583 at (x=-209.289, y=91.165, z=0.03)",
+                        "Agent collided against object with type=vehicle.dodge_charger.police and id=543 at (x=-191.076, y=91.473, z=0.085)",
+                        "Agent collided against object with type=vehicle.nissan.patrol and id=529 at (x=-154.33, y=91.551, z=0.034)",
+                        "Agent collided against object with type=vehicle.nissan.patrol and id=529 at (x=-151.262, y=91.684, z=0.033)",
+                        "Agent collided against object with type=vehicle.mercedes-benz.coupe and id=557 at (x=-135.733, y=99.863, z=0.072)",
+                        "Agent collided against object with type=vehicle.tesla.cybertruck and id=607 at (x=-125.283, y=122.836, z=0.034)",
+                        "Agent collided against object with type=vehicle.tesla.cybertruck and id=607 at (x=-125.89, y=125.833, z=0.037)",
+                        "Agent collided against object with type=vehicle.harley-davidson.low_rider and id=534 at (x=-188.895, y=115.43, z=0.09)",
+                        "Agent collided against object with type=vehicle.audi.etron and id=588 at (x=-188.657, y=110.952, z=0.374)",
+                        "Agent collided against object with type=vehicle.audi.etron and id=588 at (x=-187.958, y=88.578, z=0.083)",
+                        "Agent collided against object with type=vehicle.audi.etron and id=588 at (x=-188.106, y=63.403, z=0.089)",
+                        "Agent collided against object with type=vehicle.audi.etron and id=588 at (x=-188.134, y=38.014, z=0.089)",
+                        "Agent collided against object with type=vehicle.audi.etron and id=588 at (x=-188.154, y=26.219, z=0.088)",
+                        "Agent collided against object with type=vehicle.audi.etron and id=588 at (x=-188.139, y=16.514, z=0.089)",
+                        "Agent collided against object with type=vehicle.diamondback.century and id=470 at (x=-268.946, y=-21.099, z=0.034)",
+                        "Agent collided against object with type=vehicle.toyota.prius and id=554 at (x=-209.932, y=-84.753, z=0.033)",
+                        "Agent collided against object with type=vehicle.nissan.patrol and id=563 at (x=-191.723, y=-23.47, z=0.089)",
+                        "Agent collided against object with type=vehicle.nissan.patrol and id=563 at (x=-191.305, y=-20.422, z=0.092)"
+                    ],
+                    "outside_route_lanes": [
+                        "Agent went outside its route lanes for about 121.301 meters (7.44% of the completed route)"
+                    ],
+                    "red_light": [
+                        "Agent ran a red light 439 at (x=40.25, y=78.6, z=0.0)",
+                        "Agent ran a red light 442 at (x=-61.25, y=76.7, z=0.0)",
+                        "Agent ran a red light 455 at (x=-138.5, y=137.55, z=0.0)"
+                    ],
+                    "route_dev": [],
+                    "route_timeout": [],
+                    "stop_infraction": [
+                        "Agent ran a stop with id=389 at (x=88.839, y=5.521, z=0.0)",
+                        "Agent ran a stop with id=383 at (x=-188.036, y=105.516, z=0.055)",
+                        "Agent ran a stop with id=380 at (x=-191.549, y=73.474, z=0.055)"
+                    ],
+                    "vehicle_blocked": []
+                },
+                "meta": {
+                    "duration_game": 431.85000643506646,
+                    "duration_system": 686.0630619525909,
+                    "route_length": 1554.57833961516,
+                    "total_steps": 8636
+                },
+                "route_id": "RouteScenario_13",
+                "scores": {
+                    "score_composed": 8.409038997707749e-07,
+                    "score_penalty": 8.409038997707749e-09,
+                    "score_route": 100.0
+                },
+                "status": "Completed"
+            },
+            {
+                "index": 4,
+                "infractions": {
+                    "collisions_layout": [
+                        "Agent collided against object with type=static.bridge and id=0 at (x=-252.687, y=-75.148, z=0.143)",
+                        "Agent collided against object with type=static.bridge and id=0 at (x=-249.88, y=-76.892, z=0.146)"
+                    ],
+                    "collisions_pedestrian": [],
+                    "collisions_vehicle": [
+                        "Agent collided against object with type=vehicle.diamondback.century and id=225 at (x=50.249, y=1.851, z=0.034)",
+                        "Agent collided against object with type=vehicle.jeep.wrangler_rubicon and id=283 at (x=54.652, y=82.386, z=0.116)",
+                        "Agent collided against object with type=vehicle.jeep.wrangler_rubicon and id=283 at (x=49.39, y=82.989, z=0.085)",
+                        "Agent collided against object with type=vehicle.seat.leon and id=314 at (x=-188.034, y=27.08, z=0.089)",
+                        "Agent collided against object with type=vehicle.seat.leon and id=314 at (x=-188.119, y=16.289, z=0.089)",
+                        "Agent collided against object with type=vehicle.seat.leon and id=314 at (x=-206.567, y=-1.214, z=0.034)",
+                        "Agent collided against object with type=vehicle.diamondback.century and id=226 at (x=-209.636, y=-1.344, z=0.034)",
+                        "Agent collided against object with type=vehicle.seat.leon and id=314 at (x=-247.277, y=-0.272, z=0.034)",
+                        "Agent collided against object with type=vehicle.seat.leon and id=314 at (x=-274.27, y=45.537, z=0.034)",
+                        "Agent collided against object with type=vehicle.seat.leon and id=314 at (x=-272.306, y=68.952, z=0.034)",
+                        "Agent collided against object with type=vehicle.seat.leon and id=314 at (x=-256.835, y=87.769, z=0.039)",
+                        "Agent collided against object with type=vehicle.seat.leon and id=314 at (x=-229.537, y=91.134, z=0.036)",
+                        "Agent collided against object with type=vehicle.seat.leon and id=314 at (x=-209.567, y=91.279, z=0.032)",
+                        "Agent collided against object with type=vehicle.seat.leon and id=314 at (x=-200.862, y=91.346, z=0.042)",
+                        "Agent collided against object with type=vehicle.seat.leon and id=314 at (x=-187.373, y=91.527, z=0.084)",
+                        "Agent collided against object with type=vehicle.mercedes-benz.coupe and id=288 at (x=-155.368, y=92.006, z=0.034)",
+                        "Agent collided against object with type=vehicle.mercedes-benz.coupe and id=288 at (x=-152.307, y=92.053, z=0.033)",
+                        "Agent collided against object with type=vehicle.dodge_charger.police and id=274 at (x=-126.595, y=109.581, z=0.034)",
+                        "Agent collided against object with type=vehicle.audi.etron and id=319 at (x=-188.712, y=111.242, z=0.09)",
+                        "Agent collided against object with type=vehicle.audi.etron and id=319 at (x=-188.416, y=108.072, z=0.085)",
+                        "Agent collided against object with type=vehicle.audi.etron and id=319 at (x=-188.116, y=83.922, z=0.074)",
+                        "Agent collided against object with type=vehicle.audi.etron and id=319 at (x=-188.183, y=58.617, z=0.088)",
+                        "Agent collided against object with type=vehicle.audi.etron and id=319 at (x=-188.179, y=33.285, z=0.089)",
+                        "Agent collided against object with type=vehicle.audi.etron and id=319 at (x=-188.174, y=25.875, z=0.087)",
+                        "Agent collided against object with type=vehicle.audi.etron and id=319 at (x=-188.544, y=13.34, z=0.081)",
+                        "Agent collided against object with type=vehicle.diamondback.century and id=201 at (x=-269.353, y=-21.131, z=0.034)",
+                        "Agent collided against object with type=vehicle.nissan.patrol and id=294 at (x=-191.714, y=-23.733, z=0.089)",
+                        "Agent collided against object with type=vehicle.nissan.patrol and id=294 at (x=-191.731, y=-20.683, z=0.09)"
+                    ],
+                    "outside_route_lanes": [
+                        "Agent went outside its route lanes for about 116.521 meters (7.15% of the completed route)"
+                    ],
+                    "red_light": [
+                        "Agent ran a red light 170 at (x=40.25, y=78.6, z=0.0)",
+                        "Agent ran a red light 173 at (x=-61.25, y=76.7, z=0.0)",
+                        "Agent ran a red light 186 at (x=-138.5, y=137.55, z=0.0)"
+                    ],
+                    "route_dev": [],
+                    "route_timeout": [],
+                    "stop_infraction": [
+                        "Agent ran a stop with id=120 at (x=88.839, y=5.521, z=0.0)",
+                        "Agent ran a stop with id=114 at (x=-188.036, y=105.516, z=0.055)",
+                        "Agent ran a stop with id=109 at (x=-205.414, y=91.087, z=0.0)",
+                        "Agent ran a stop with id=100 at (x=-203.918, y=-84.634, z=0.0)",
+                        "Agent ran a stop with id=111 at (x=-191.549, y=73.474, z=0.055)"
+                    ],
+                    "vehicle_blocked": []
+                },
+                "meta": {
+                    "duration_game": 431.450006429106,
+                    "duration_system": 707.2652802467346,
+                    "route_length": 1554.57833961516,
+                    "total_steps": 8628
+                },
+                "route_id": "RouteScenario_13",
+                "scores": {
+                    "score_composed": 2.7077444599882032e-06,
+                    "score_penalty": 2.7077444599882032e-08,
+                    "score_route": 100.0
+                },
+                "status": "Completed"
+            },
+            {
+                "index": 5,
+                "infractions": {
+                    "collisions_layout": [
+                        "Agent collided against object with type=static.fence and id=0 at (x=-255.651, y=-71.812, z=0.145)",
+                        "Agent collided against object with type=static.fence and id=0 at (x=-253.512, y=-73.918, z=0.163)",
+                        "Agent collided against object with type=static.bridge and id=0 at (x=-252.096, y=-76.563, z=0.105)",
+                        "Agent collided against object with type=static.bridge and id=0 at (x=-249.868, y=-78.573, z=0.105)"
+                    ],
+                    "collisions_pedestrian": [],
+                    "collisions_vehicle": [
+                        "Agent collided against object with type=vehicle.jeep.wrangler_rubicon and id=552 at (x=55.024, y=82.806, z=0.081)",
+                        "Agent collided against object with type=vehicle.jeep.wrangler_rubicon and id=596 at (x=-44.053, y=91.789, z=0.055)",
+                        "Agent collided against object with type=vehicle.diamondback.century and id=487 at (x=-55.025, y=111.084, z=0.089)",
+                        "Agent collided against object with type=vehicle.harley-davidson.low_rider and id=512 at (x=-189.418, y=109.915, z=0.089)",
+                        "Agent collided against object with type=vehicle.seat.leon and id=583 at (x=-188.014, y=27.177, z=0.089)",
+                        "Agent collided against object with type=vehicle.seat.leon and id=583 at (x=-189.151, y=11.212, z=0.067)",
+                        "Agent collided against object with type=vehicle.diamondback.century and id=495 at (x=-209.248, y=-1.685, z=0.038)",
+                        "Agent collided against object with type=vehicle.seat.leon and id=583 at (x=-247.281, y=-0.315, z=0.033)",
+                        "Agent collided against object with type=vehicle.seat.leon and id=583 at (x=-268.693, y=6.29, z=0.034)",
+                        "Agent collided against object with type=vehicle.seat.leon and id=583 at (x=-271.461, y=30.151, z=0.042)",
+                        "Agent collided against object with type=vehicle.seat.leon and id=583 at (x=-271.193, y=55.651, z=0.04)",
+                        "Agent collided against object with type=vehicle.nissan.patrol and id=501 at (x=-195.819, y=91.382, z=0.076)",
+                        "Agent collided against object with type=vehicle.nissan.patrol and id=529 at (x=-154.267, y=91.556, z=0.034)",
+                        "Agent collided against object with type=vehicle.nissan.patrol and id=529 at (x=-151.255, y=91.687, z=0.032)",
+                        "Agent collided against object with type=vehicle.tesla.cybertruck and id=607 at (x=-126.073, y=122.482, z=0.034)",
+                        "Agent collided against object with type=vehicle.tesla.cybertruck and id=607 at (x=-127.054, y=125.384, z=0.022)",
+                        "Agent collided against object with type=vehicle.harley-davidson.low_rider and id=534 at (x=-188.231, y=106.349, z=0.089)",
+                        "Agent collided against object with type=vehicle.tesla.model3 and id=614 at (x=-247.218, y=-4.151, z=0.034)",
+                        "Agent collided against object with type=vehicle.tesla.model3 and id=614 at (x=-250.272, y=-4.05, z=0.032)",
+                        "Agent collided against object with type=vehicle.diamondback.century and id=470 at (x=-269.622, y=-19.842, z=0.034)",
+                        "Agent collided against object with type=vehicle.tesla.model3 and id=614 at (x=-266.71, y=-56.272, z=0.034)"
+                    ],
+                    "outside_route_lanes": [
+                        "Agent went outside its route lanes for about 140.138 meters (10.19% of the completed route)"
+                    ],
+                    "red_light": [
+                        "Agent ran a red light 439 at (x=40.25, y=78.6, z=0.0)",
+                        "Agent ran a red light 451 at (x=18.6, y=79.75, z=0.0)",
+                        "Agent ran a red light 442 at (x=-61.25, y=76.7, z=0.0)",
+                        "Agent ran a red light 455 at (x=-138.5, y=137.55, z=0.0)",
+                        "Agent ran a red light 449 at (x=-179.25, y=-9.7, z=0.0)"
+                    ],
+                    "route_dev": [],
+                    "route_timeout": [],
+                    "stop_infraction": [
+                        "Agent ran a stop with id=389 at (x=88.839, y=5.521, z=0.0)",
+                        "Agent ran a stop with id=383 at (x=-188.036, y=105.516, z=0.055)",
+                        "Agent ran a stop with id=378 at (x=-205.414, y=91.087, z=0.0)",
+                        "Agent ran a stop with id=383 at (x=-188.036, y=105.516, z=0.055)"
+                    ],
+                    "vehicle_blocked": [
+                        "Agent got blocked at (x=-249.306, y=-78.564, z=0.106)"
+                    ]
+                },
+                "meta": {
+                    "duration_game": 542.50000808388,
+                    "duration_system": 851.8515667915344,
+                    "route_length": 1554.57833961516,
+                    "total_steps": 10849
+                },
+                "route_id": "RouteScenario_13",
+                "scores": {
+                    "score_composed": 2.030647124873918e-05,
+                    "score_penalty": 2.4210497649451e-07,
+                    "score_route": 83.87465446915195
+                },
+                "status": "Failed - Agent got blocked"
+            },
+            {
+                "index": 6,
+                "infractions": {
+                    "collisions_layout": [],
+                    "collisions_pedestrian": [],
+                    "collisions_vehicle": [
+                        "Agent collided against object with type=vehicle.diamondback.century and id=763 at (x=51.345, y=1.869, z=0.034)",
+                        "Agent collided against object with type=vehicle.audi.tt and id=838 at (x=101.352, y=25.982, z=0.034)",
+                        "Agent collided against object with type=vehicle.audi.tt and id=838 at (x=101.071, y=29.021, z=0.033)",
+                        "Agent collided against object with type=vehicle.jeep.wrangler_rubicon and id=821 at (x=50.798, y=83.898, z=0.041)",
+                        "Agent collided against object with type=vehicle.jeep.wrangler_rubicon and id=821 at (x=47.765, y=84.78, z=0.03)",
+                        "Agent collided against object with type=vehicle.jeep.wrangler_rubicon and id=777 at (x=-116.182, y=147.828, z=0.089)",
+                        "Agent collided against object with type=vehicle.diamondback.century and id=764 at (x=-209.505, y=-3.071, z=0.034)",
+                        "Agent collided against object with type=vehicle.seat.leon and id=852 at (x=-212.155, y=91.161, z=0.036)",
+                        "Agent collided against object with type=vehicle.seat.leon and id=852 at (x=-188.145, y=27.197, z=0.089)",
+                        "Agent collided against object with type=vehicle.seat.leon and id=852 at (x=-188.506, y=13.869, z=0.083)",
+                        "Agent collided against object with type=vehicle.diamondback.century and id=739 at (x=-269.303, y=-21.118, z=0.034)",
+                        "Agent collided against object with type=vehicle.bmw.isetta and id=779 at (x=-191.541, y=-23.381, z=0.089)",
+                        "Agent collided against object with type=vehicle.bmw.isetta and id=779 at (x=-191.58, y=-20.109, z=0.101)",
+                        "Agent collided against object with type=vehicle.bmw.isetta and id=779 at (x=-191.437, y=5.418, z=0.127)",
+                        "Agent collided against object with type=vehicle.bmw.isetta and id=779 at (x=-191.373, y=37.675, z=0.157)",
+                        "Agent collided against object with type=vehicle.bmw.isetta and id=779 at (x=-191.489, y=69.49, z=0.155)",
+                        "Agent collided against object with type=vehicle.bmw.isetta and id=779 at (x=-191.472, y=73.178, z=0.092)",
+                        "Agent collided against object with type=vehicle.bmw.isetta and id=779 at (x=-190.915, y=76.825, z=0.09)",
+                        "Agent collided against object with type=vehicle.bmw.isetta and id=779 at (x=-170.976, y=89.669, z=0.022)"
+                    ],
+                    "outside_route_lanes": [
+                        "Agent went outside its route lanes for about 132.75 meters (8.14% of the completed route)"
+                    ],
+                    "red_light": [
+                        "Agent ran a red light 708 at (x=40.25, y=78.6, z=0.0)",
+                        "Agent ran a red light 711 at (x=-61.25, y=76.7, z=0.0)",
+                        "Agent ran a red light 724 at (x=-138.5, y=137.55, z=0.0)",
+                        "Agent ran a red light 718 at (x=-179.25, y=-9.7, z=0.0)",
+                        "Agent ran a red light 713 at (x=-112.3, y=101.1, z=0.0)"
+                    ],
+                    "route_dev": [],
+                    "route_timeout": [],
+                    "stop_infraction": [
+                        "Agent ran a stop with id=658 at (x=88.839, y=5.521, z=0.0)",
+                        "Agent ran a stop with id=652 at (x=-188.036, y=105.516, z=0.055)",
+                        "Agent ran a stop with id=656 at (x=-256.469, y=-0.304, z=0.0)",
+                        "Agent ran a stop with id=652 at (x=-188.036, y=105.516, z=0.055)",
+                        "Agent ran a stop with id=638 at (x=-203.918, y=-84.634, z=0.0)"
+                    ],
+                    "vehicle_blocked": []
+                },
+                "meta": {
+                    "duration_game": 383.4000057131052,
+                    "duration_system": 600.8582861423492,
+                    "route_length": 1554.57833961516,
+                    "total_steps": 7667
+                },
+                "route_id": "RouteScenario_14",
+                "scores": {
+                    "score_composed": 0.0003082733162101575,
+                    "score_penalty": 3.0827331621015753e-06,
+                    "score_route": 100.0
+                },
+                "status": "Completed"
+            },
+            {
+                "index": 7,
+                "infractions": {
+                    "collisions_layout": [],
+                    "collisions_pedestrian": [],
+                    "collisions_vehicle": [
+                        "Agent collided against object with type=vehicle.diamondback.century and id=1032 at (x=51.396, y=1.631, z=0.034)",
+                        "Agent collided against object with type=vehicle.audi.tt and id=1107 at (x=101.473, y=27.168, z=0.034)",
+                        "Agent collided against object with type=vehicle.audi.tt and id=1107 at (x=101.148, y=30.568, z=0.033)",
+                        "Agent collided against object with type=vehicle.jeep.wrangler_rubicon and id=1090 at (x=50.832, y=84.021, z=0.043)",
+                        "Agent collided against object with type=vehicle.jeep.wrangler_rubicon and id=1090 at (x=47.79, y=84.806, z=0.031)",
+                        "Agent collided against object with type=vehicle.jeep.wrangler_rubicon and id=1046 at (x=-116.319, y=147.682, z=0.089)",
+                        "Agent collided against object with type=vehicle.dodge_charger.police and id=1091 at (x=-145.95, y=146.69, z=0.089)",
+                        "Agent collided against object with type=vehicle.diamondback.century and id=1033 at (x=-209.296, y=-2.445, z=0.034)",
+                        "Agent collided against object with type=vehicle.seat.leon and id=1121 at (x=-274.184, y=49.759, z=0.034)",
+                        "Agent collided against object with type=vehicle.seat.leon and id=1121 at (x=-270.655, y=76.421, z=0.038)",
+                        "Agent collided against object with type=vehicle.seat.leon and id=1121 at (x=-247.397, y=91.953, z=0.046)",
+                        "Agent collided against object with type=vehicle.seat.leon and id=1121 at (x=-219.881, y=92.256, z=0.041)",
+                        "Agent collided against object with type=vehicle.seat.leon and id=1121 at (x=-203.342, y=91.996, z=0.036)",
+                        "Agent collided against object with type=vehicle.dodge_charger.police and id=1081 at (x=-191.378, y=91.85, z=0.084)",
+                        "Agent collided against object with type=vehicle.mercedes-benz.coupe and id=1095 at (x=-155.457, y=91.47, z=0.034)",
+                        "Agent collided against object with type=vehicle.mercedes-benz.coupe and id=1095 at (x=-152.388, y=91.568, z=0.033)",
+                        "Agent collided against object with type=vehicle.tesla.cybertruck and id=1145 at (x=-125.525, y=122.454, z=0.034)",
+                        "Agent collided against object with type=vehicle.audi.etron and id=1126 at (x=-188.703, y=111.348, z=0.091)",
+                        "Agent collided against object with type=vehicle.audi.etron and id=1126 at (x=-188.446, y=108.218, z=0.085)",
+                        "Agent collided against object with type=vehicle.audi.etron and id=1126 at (x=-188.274, y=83.964, z=0.074)",
+                        "Agent collided against object with type=vehicle.audi.etron and id=1126 at (x=-188.346, y=58.734, z=0.089)",
+                        "Agent collided against object with type=vehicle.audi.etron and id=1126 at (x=-188.346, y=33.362, z=0.089)",
+                        "Agent collided against object with type=vehicle.audi.etron and id=1126 at (x=-188.252, y=23.096, z=0.087)",
+                        "Agent collided against object with type=vehicle.audi.etron and id=1126 at (x=-188.149, y=20.079, z=0.087)",
+                        "Agent collided against object with type=vehicle.audi.etron and id=1126 at (x=-197.528, y=1.771, z=0.065)",
+                        "Agent collided against object with type=vehicle.diamondback.century and id=1008 at (x=-270.019, y=-21.546, z=0.034)",
+                        "Agent collided against object with type=vehicle.nissan.patrol and id=1101 at (x=-191.527, y=-23.973, z=0.089)",
+                        "Agent collided against object with type=vehicle.nissan.patrol and id=1101 at (x=-191.53, y=-20.926, z=0.074)"
+                    ],
+                    "outside_route_lanes": [
+                        "Agent went outside its route lanes for about 120.843 meters (7.41% of the completed route)"
+                    ],
+                    "red_light": [
+                        "Agent ran a red light 977 at (x=40.25, y=78.6, z=0.0)",
+                        "Agent ran a red light 980 at (x=-61.25, y=76.7, z=0.0)",
+                        "Agent ran a red light 993 at (x=-138.5, y=137.55, z=0.0)"
+                    ],
+                    "route_dev": [],
+                    "route_timeout": [],
+                    "stop_infraction": [
+                        "Agent ran a stop with id=927 at (x=88.839, y=5.521, z=0.0)",
+                        "Agent ran a stop with id=921 at (x=-188.036, y=105.516, z=0.055)",
+                        "Agent ran a stop with id=925 at (x=-256.469, y=-0.304, z=0.0)",
+                        "Agent ran a stop with id=916 at (x=-205.414, y=91.087, z=0.0)",
+                        "Agent ran a stop with id=907 at (x=-203.918, y=-84.634, z=0.0)",
+                        "Agent ran a stop with id=918 at (x=-191.549, y=73.474, z=0.055)"
+                    ],
+                    "vehicle_blocked": []
+                },
+                "meta": {
+                    "duration_game": 431.2000064253807,
+                    "duration_system": 668.9141898155212,
+                    "route_length": 1554.57833961516,
+                    "total_steps": 8623
+                },
+                "route_id": "RouteScenario_14",
+                "scores": {
+                    "score_composed": 5.112455266669879e-06,
+                    "score_penalty": 5.112455266669879e-08,
+                    "score_route": 100.0
+                },
+                "status": "Completed"
+            },
+            {
+                "index": 8,
+                "infractions": {
+                    "collisions_layout": [],
+                    "collisions_pedestrian": [],
+                    "collisions_vehicle": [
+                        "Agent collided against object with type=vehicle.diamondback.century and id=225 at (x=50.953, y=2.304, z=0.034)",
+                        "Agent collided against object with type=vehicle.audi.tt and id=300 at (x=101.609, y=26.734, z=0.034)",
+                        "Agent collided against object with type=vehicle.audi.tt and id=300 at (x=101.053, y=29.701, z=0.031)",
+                        "Agent collided against object with type=vehicle.jeep.wrangler_rubicon and id=283 at (x=50.849, y=83.977, z=0.038)",
+                        "Agent collided against object with type=vehicle.jeep.wrangler_rubicon and id=283 at (x=47.187, y=84.774, z=0.033)",
+                        "Agent collided against object with type=vehicle.jeep.wrangler_rubicon and id=239 at (x=-115.657, y=147.766, z=0.088)",
+                        "Agent collided against object with type=vehicle.mustang.mustang and id=235 at (x=-119.186, y=147.533, z=0.076)",
+                        "Agent collided against object with type=vehicle.mustang.mustang and id=235 at (x=-122.772, y=147.633, z=0.049)",
+                        "Agent collided against object with type=vehicle.tesla.cybertruck and id=338 at (x=-125.393, y=151.453, z=0.074)",
+                        "Agent collided against object with type=vehicle.dodge_charger.police and id=284 at (x=-190.352, y=111.362, z=0.089)",
+                        "Agent collided against object with type=vehicle.dodge_charger.police and id=284 at (x=-188.866, y=102.464, z=0.121)",
+                        "Agent collided against object with type=vehicle.diamondback.century and id=226 at (x=-209.324, y=-2.688, z=0.034)",
+                        "Agent collided against object with type=vehicle.nissan.patrol and id=260 at (x=-153.993, y=91.512, z=0.034)",
+                        "Agent collided against object with type=vehicle.nissan.patrol and id=260 at (x=-150.971, y=91.668, z=0.033)",
+                        "Agent collided against object with type=vehicle.mercedes-benz.coupe and id=288 at (x=-135.544, y=100.077, z=0.072)",
+                        "Agent collided against object with type=vehicle.mercedes-benz.coupe and id=288 at (x=-127.809, y=128.142, z=0.034)",
+                        "Agent collided against object with type=vehicle.mercedes-benz.coupe and id=288 at (x=-133.816, y=138.717, z=0.041)",
+                        "Agent collided against object with type=vehicle.mercedes-benz.coupe and id=288 at (x=-176.1, y=139.455, z=0.089)",
+                        "Agent collided against object with type=vehicle.harley-davidson.low_rider and id=265 at (x=-188.597, y=119.134, z=0.089)",
+                        "Agent collided against object with type=vehicle.audi.etron and id=319 at (x=-188.145, y=52.372, z=0.089)",
+                        "Agent collided against object with type=vehicle.audi.etron and id=319 at (x=-188.093, y=32.993, z=0.088)",
+                        "Agent collided against object with type=vehicle.audi.etron and id=319 at (x=-187.961, y=29.969, z=0.088)",
+                        "Agent collided against object with type=vehicle.diamondback.century and id=201 at (x=-269.567, y=-21.473, z=0.034)",
+                        "Agent collided against object with type=vehicle.harley-davidson.low_rider and id=287 at (x=-208.379, y=-84.705, z=0.034)",
+                        "Agent collided against object with type=vehicle.harley-davidson.low_rider and id=280 at (x=-194.031, y=-70.363, z=0.089)",
+                        "Agent collided against object with type=vehicle.bmw.isetta and id=241 at (x=-191.582, y=-28.064, z=0.09)",
+                        "Agent collided against object with type=vehicle.bmw.isetta and id=241 at (x=-191.588, y=-25.035, z=0.097)",
+                        "Agent collided against object with type=vehicle.bmw.isetta and id=241 at (x=-191.483, y=-2.214, z=0.131)",
+                        "Agent collided against object with type=vehicle.bmw.isetta and id=241 at (x=-191.793, y=30.15, z=0.157)",
+                        "Agent collided against object with type=vehicle.bmw.isetta and id=241 at (x=-191.484, y=62.045, z=0.159)",
+                        "Agent collided against object with type=vehicle.bmw.isetta and id=241 at (x=-191.556, y=72.862, z=0.091)"
+                    ],
+                    "outside_route_lanes": [
+                        "Agent went outside its route lanes for about 129.894 meters (7.97% of the completed route)"
+                    ],
+                    "red_light": [
+                        "Agent ran a red light 170 at (x=40.25, y=78.6, z=0.0)",
+                        "Agent ran a red light 173 at (x=-61.25, y=76.7, z=0.0)",
+                        "Agent ran a red light 186 at (x=-138.5, y=137.55, z=0.0)",
+                        "Agent ran a red light 180 at (x=-179.25, y=-9.7, z=0.0)"
+                    ],
+                    "route_dev": [],
+                    "route_timeout": [],
+                    "stop_infraction": [
+                        "Agent ran a stop with id=120 at (x=88.839, y=5.521, z=0.0)",
+                        "Agent ran a stop with id=114 at (x=-188.036, y=105.516, z=0.055)",
+                        "Agent ran a stop with id=118 at (x=-256.469, y=-0.304, z=0.0)",
+                        "Agent ran a stop with id=109 at (x=-205.414, y=91.087, z=0.0)",
+                        "Agent ran a stop with id=114 at (x=-188.036, y=105.516, z=0.055)",
+                        "Agent ran a stop with id=100 at (x=-203.918, y=-84.634, z=0.0)"
+                    ],
+                    "vehicle_blocked": []
+                },
+                "meta": {
+                    "duration_game": 437.35000651702285,
+                    "duration_system": 716.4372828006744,
+                    "route_length": 1554.57833961516,
+                    "total_steps": 8746
+                },
+                "route_id": "RouteScenario_14",
+                "scores": {
+                    "score_composed": 7.683696595987086e-07,
+                    "score_penalty": 7.683696595987086e-09,
+                    "score_route": 100.0
+                },
+                "status": "Completed"
+            },
+            {
+                "index": 9,
+                "infractions": {
+                    "collisions_layout": [],
+                    "collisions_pedestrian": [],
+                    "collisions_vehicle": [
+                        "Agent collided against object with type=vehicle.diamondback.century and id=494 at (x=50.334, y=2.944, z=0.034)",
+                        "Agent collided against object with type=vehicle.jeep.wrangler_rubicon and id=552 at (x=85.199, y=70.508, z=0.034)",
+                        "Agent collided against object with type=vehicle.jeep.wrangler_rubicon and id=596 at (x=-46.721, y=93.361, z=0.055)",
+                        "Agent collided against object with type=vehicle.harley-davidson.low_rider and id=512 at (x=-189.224, y=110.322, z=0.087)",
+                        "Agent collided against object with type=vehicle.seat.leon and id=583 at (x=-188.008, y=27.223, z=0.089)",
+                        "Agent collided against object with type=vehicle.seat.leon and id=583 at (x=-190.615, y=8.54, z=0.057)",
+                        "Agent collided against object with type=vehicle.seat.leon and id=583 at (x=-211.458, y=-1.553, z=0.045)",
+                        "Agent collided against object with type=vehicle.seat.leon and id=583 at (x=-235.67, y=-1.299, z=0.048)",
+                        "Agent collided against object with type=vehicle.seat.leon and id=583 at (x=-249.369, y=-0.924, z=0.055)",
+                        "Agent collided against object with type=vehicle.seat.leon and id=583 at (x=-269.347, y=8.012, z=0.034)",
+                        "Agent collided against object with type=vehicle.seat.leon and id=583 at (x=-271.347, y=34.322, z=0.038)",
+                        "Agent collided against object with type=vehicle.seat.leon and id=583 at (x=-271.17, y=61.742, z=0.038)",
+                        "Agent collided against object with type=vehicle.seat.leon and id=583 at (x=-188.021, y=27.378, z=0.09)",
+                        "Agent collided against object with type=vehicle.seat.leon and id=583 at (x=-188.449, y=13.952, z=0.083)"
+                    ],
+                    "outside_route_lanes": [
+                        "Agent went outside its route lanes for about 109.502 meters (6.72% of the completed route)"
+                    ],
+                    "red_light": [
+                        "Agent ran a red light 439 at (x=40.25, y=78.6, z=0.0)",
+                        "Agent ran a red light 451 at (x=18.6, y=79.75, z=0.0)",
+                        "Agent ran a red light 442 at (x=-61.25, y=76.7, z=0.0)",
+                        "Agent ran a red light 455 at (x=-138.5, y=137.55, z=0.0)",
+                        "Agent ran a red light 444 at (x=-112.3, y=101.1, z=0.0)",
+                        "Agent ran a red light 453 at (x=-201.55, y=12.45, z=0.0)"
+                    ],
+                    "route_dev": [],
+                    "route_timeout": [],
+                    "stop_infraction": [
+                        "Agent ran a stop with id=388 at (x=88.839, y=5.521, z=0.0)",
+                        "Agent ran a stop with id=377 at (x=-205.414, y=91.087, z=0.0)",
+                        "Agent ran a stop with id=382 at (x=-188.036, y=105.516, z=0.055)",
+                        "Agent ran a stop with id=368 at (x=-203.918, y=-84.634, z=0.0)",
+                        "Agent ran a stop with id=379 at (x=-191.549, y=73.474, z=0.055)"
+                    ],
+                    "vehicle_blocked": []
+                },
+                "meta": {
+                    "duration_game": 344.95000514015555,
+                    "duration_system": 557.8884162902832,
+                    "route_length": 1554.57833961516,
+                    "total_steps": 6898
+                },
+                "route_id": "RouteScenario_15",
+                "scores": {
+                    "score_composed": 0.002818165140080219,
+                    "score_penalty": 2.818165140080219e-05,
+                    "score_route": 100.0
+                },
+                "status": "Completed"
+            },
+            {
+                "index": 10,
+                "infractions": {
+                    "collisions_layout": [],
+                    "collisions_pedestrian": [],
+                    "collisions_vehicle": [
+                        "Agent collided against object with type=vehicle.diamondback.century and id=763 at (x=49.699, y=2.701, z=0.034)",
+                        "Agent collided against object with type=vehicle.jeep.wrangler_rubicon and id=821 at (x=53.536, y=82.832, z=0.08)",
+                        "Agent collided against object with type=vehicle.jeep.wrangler_rubicon and id=865 at (x=-45.128, y=91.997, z=0.054)",
+                        "Agent collided against object with type=vehicle.harley-davidson.low_rider and id=781 at (x=-189.285, y=110.207, z=0.089)",
+                        "Agent collided against object with type=vehicle.seat.leon and id=852 at (x=-188.082, y=27.148, z=0.089)",
+                        "Agent collided against object with type=vehicle.seat.leon and id=852 at (x=-187.972, y=18.149, z=0.089)",
+                        "Agent collided against object with type=vehicle.seat.leon and id=852 at (x=-204.336, y=-0.926, z=0.033)",
+                        "Agent collided against object with type=vehicle.diamondback.century and id=764 at (x=-209.941, y=-1.246, z=0.034)",
+                        "Agent collided against object with type=vehicle.diamondback.century and id=764 at (x=-223.142, y=-1.132, z=0.032)",
+                        "Agent collided against object with type=vehicle.seat.leon and id=852 at (x=-247.159, y=-0.354, z=0.033)",
+                        "Agent collided against object with type=vehicle.seat.leon and id=852 at (x=-260.421, y=0.636, z=0.046)",
+                        "Agent collided against object with type=vehicle.seat.leon and id=852 at (x=-271.174, y=17.283, z=0.041)",
+                        "Agent collided against object with type=vehicle.seat.leon and id=852 at (x=-271.332, y=41.5, z=0.038)",
+                        "Agent collided against object with type=vehicle.seat.leon and id=852 at (x=-271.507, y=68.298, z=0.033)",
+                        "Agent collided against object with type=vehicle.seat.leon and id=852 at (x=-255.119, y=89.12, z=0.034)",
+                        "Agent collided against object with type=vehicle.seat.leon and id=852 at (x=-228.163, y=91.753, z=0.034)",
+                        "Agent collided against object with type=vehicle.seat.leon and id=852 at (x=-209.402, y=91.553, z=0.037)",
+                        "Agent collided against object with type=vehicle.tesla.cybertruck and id=876 at (x=-126.087, y=122.577, z=0.034)",
+                        "Agent collided against object with type=vehicle.tesla.cybertruck and id=876 at (x=-127.506, y=125.249, z=0.033)",
+                        "Agent collided against object with type=vehicle.jeep.wrangler_rubicon and id=821 at (x=-188.004, y=76.527, z=0.09)",
+                        "Agent collided against object with type=vehicle.jeep.wrangler_rubicon and id=821 at (x=-188.139, y=50.064, z=0.089)",
+                        "Agent collided against object with type=vehicle.jeep.wrangler_rubicon and id=821 at (x=-188.053, y=24.937, z=0.088)",
+                        "Agent collided against object with type=vehicle.jeep.wrangler_rubicon and id=821 at (x=-187.994, y=21.901, z=0.088)",
+                        "Agent collided against object with type=vehicle.jeep.wrangler_rubicon and id=821 at (x=-198.364, y=0.783, z=0.061)",
+                        "Agent collided against object with type=vehicle.diamondback.century and id=739 at (x=-270.049, y=-21.416, z=0.034)",
+                        "Agent collided against object with type=vehicle.toyota.prius and id=823 at (x=-215.242, y=-84.658, z=0.034)",
+                        "Agent collided against object with type=vehicle.toyota.prius and id=823 at (x=-212.182, y=-84.652, z=0.033)",
+                        "Agent collided against object with type=vehicle.toyota.prius and id=823 at (x=-209.173, y=-84.635, z=0.031)",
+                        "Agent collided against object with type=vehicle.harley-davidson.low_rider and id=825 at (x=-192.129, y=-29.784, z=0.089)",
+                        "Agent collided against object with type=vehicle.chevrolet.impala and id=806 at (x=-192.007, y=-25.341, z=0.088)",
+                        "Agent collided against object with type=vehicle.chevrolet.impala and id=806 at (x=-191.711, y=-16.337, z=0.094)"
+                    ],
+                    "outside_route_lanes": [
+                        "Agent went outside its route lanes for about 101.625 meters (6.23% of the completed route)"
+                    ],
+                    "red_light": [
+                        "Agent ran a red light 708 at (x=40.25, y=78.6, z=0.0)",
+                        "Agent ran a red light 720 at (x=18.6, y=79.75, z=0.0)",
+                        "Agent ran a red light 711 at (x=-61.25, y=76.7, z=0.0)",
+                        "Agent ran a red light 724 at (x=-138.5, y=137.55, z=0.0)",
+                        "Agent ran a red light 713 at (x=-112.3, y=101.1, z=0.0)"
+                    ],
+                    "route_dev": [],
+                    "route_timeout": [],
+                    "stop_infraction": [
+                        "Agent ran a stop with id=658 at (x=88.839, y=5.521, z=0.0)",
+                        "Agent ran a stop with id=652 at (x=-188.036, y=105.516, z=0.055)",
+                        "Agent ran a stop with id=649 at (x=-191.549, y=73.474, z=0.055)"
+                    ],
+                    "vehicle_blocked": []
+                },
+                "meta": {
+                    "duration_game": 430.3500064127147,
+                    "duration_system": 680.7656798362732,
+                    "route_length": 1554.57833961516,
+                    "total_steps": 8606
+                },
+                "route_id": "RouteScenario_15",
+                "scores": {
+                    "score_composed": 1.070292796795542e-06,
+                    "score_penalty": 1.070292796795542e-08,
+                    "score_route": 100.0
+                },
+                "status": "Completed"
+            },
+            {
+                "index": 11,
+                "infractions": {
+                    "collisions_layout": [],
+                    "collisions_pedestrian": [],
+                    "collisions_vehicle": [
+                        "Agent collided against object with type=vehicle.diamondback.century and id=1032 at (x=49.554, y=2.744, z=0.034)",
+                        "Agent collided against object with type=vehicle.jeep.wrangler_rubicon and id=1134 at (x=-45.356, y=92.203, z=0.054)",
+                        "Agent collided against object with type=vehicle.harley-davidson.low_rider and id=1050 at (x=-189.746, y=109.36, z=0.089)",
+                        "Agent collided against object with type=vehicle.harley-davidson.low_rider and id=1050 at (x=-188.358, y=99.386, z=0.088)",
+                        "Agent collided against object with type=vehicle.harley-davidson.low_rider and id=1050 at (x=-188.467, y=84.206, z=0.073)",
+                        "Agent collided against object with type=vehicle.harley-davidson.low_rider and id=1050 at (x=-188.378, y=67.499, z=0.089)",
+                        "Agent collided against object with type=vehicle.seat.leon and id=1121 at (x=-187.952, y=27.279, z=0.089)",
+                        "Agent collided against object with type=vehicle.seat.leon and id=1121 at (x=-189.48, y=10.494, z=0.063)",
+                        "Agent collided against object with type=vehicle.seat.leon and id=1121 at (x=-209.92, y=-1.86, z=0.034)",
+                        "Agent collided against object with type=vehicle.seat.leon and id=1121 at (x=-239.481, y=-1.978, z=0.034)",
+                        "Agent collided against object with type=vehicle.dodge_charger.police and id=1091 at (x=-269.321, y=71.375, z=0.034)",
+                        "Agent collided against object with type=vehicle.dodge_charger.police and id=1091 at (x=-267.565, y=74.291, z=0.035)",
+                        "Agent collided against object with type=vehicle.dodge_charger.police and id=1091 at (x=-265.942, y=76.82, z=0.035)",
+                        "Agent collided against object with type=vehicle.dodge_charger.police and id=1091 at (x=-264.355, y=79.471, z=0.033)",
+                        "Agent collided against object with type=vehicle.dodge_charger.police and id=1091 at (x=-262.633, y=81.942, z=0.033)",
+                        "Agent collided against object with type=vehicle.dodge_charger.police and id=1091 at (x=-260.867, y=84.388, z=0.033)",
+                        "Agent collided against object with type=vehicle.nissan.patrol and id=1067 at (x=-154.394, y=91.435, z=0.034)",
+                        "Agent collided against object with type=vehicle.tesla.cybertruck and id=1145 at (x=-126.306, y=122.375, z=0.034)",
+                        "Agent collided against object with type=vehicle.tesla.cybertruck and id=1145 at (x=-127.179, y=125.268, z=0.025)",
+                        "Agent collided against object with type=vehicle.harley-davidson.low_rider and id=1072 at (x=-178.366, y=133.35, z=0.09)",
+                        "Agent collided against object with type=vehicle.harley-davidson.low_rider and id=1072 at (x=-187.475, y=123.634, z=0.089)",
+                        "Agent collided against object with type=vehicle.harley-davidson.low_rider and id=1072 at (x=-187.834, y=98.588, z=0.088)",
+                        "Agent collided against object with type=vehicle.harley-davidson.low_rider and id=1072 at (x=-188.029, y=74.585, z=0.089)",
+                        "Agent collided against object with type=vehicle.harley-davidson.low_rider and id=1072 at (x=-187.9, y=51.347, z=0.086)",
+                        "Agent collided against object with type=vehicle.harley-davidson.low_rider and id=1072 at (x=-187.986, y=30.036, z=0.09)",
+                        "Agent collided against object with type=vehicle.audi.etron and id=1126 at (x=-188.174, y=26.473, z=0.088)",
+                        "Agent collided against object with type=vehicle.audi.etron and id=1126 at (x=-188.082, y=18.825, z=0.089)",
+                        "Agent collided against object with type=vehicle.diamondback.century and id=1008 at (x=-269.696, y=-21.231, z=0.034)",
+                        "Agent collided against object with type=vehicle.nissan.patrol and id=1101 at (x=-191.96, y=-23.709, z=0.089)",
+                        "Agent collided against object with type=vehicle.nissan.patrol and id=1101 at (x=-191.967, y=-20.642, z=0.085)"
+                    ],
+                    "outside_route_lanes": [
+                        "Agent went outside its route lanes for about 119.652 meters (7.34% of the completed route)"
+                    ],
+                    "red_light": [
+                        "Agent ran a red light 977 at (x=40.25, y=78.6, z=0.0)",
+                        "Agent ran a red light 989 at (x=18.6, y=79.75, z=0.0)",
+                        "Agent ran a red light 980 at (x=-61.25, y=76.7, z=0.0)",
+                        "Agent ran a red light 993 at (x=-138.5, y=137.55, z=0.0)"
+                    ],
+                    "route_dev": [],
+                    "route_timeout": [],
+                    "stop_infraction": [
+                        "Agent ran a stop with id=922 at (x=88.839, y=5.521, z=0.0)",
+                        "Agent ran a stop with id=916 at (x=-188.036, y=105.516, z=0.055)",
+                        "Agent ran a stop with id=920 at (x=-256.469, y=-0.304, z=0.0)",
+                        "Agent ran a stop with id=911 at (x=-205.414, y=91.087, z=0.0)",
+                        "Agent ran a stop with id=916 at (x=-188.036, y=105.516, z=0.055)",
+                        "Agent ran a stop with id=902 at (x=-203.918, y=-84.634, z=0.0)",
+                        "Agent ran a stop with id=913 at (x=-191.549, y=73.474, z=0.055)"
+                    ],
+                    "vehicle_blocked": []
+                },
+                "meta": {
+                    "duration_game": 431.3000064268708,
+                    "duration_system": 677.5313301086426,
+                    "route_length": 1554.57833961516,
+                    "total_steps": 8625
+                },
+                "route_id": "RouteScenario_15",
+                "scores": {
+                    "score_composed": 1.0314842160563943e-06,
+                    "score_penalty": 1.0314842160563944e-08,
+                    "score_route": 100.0
+                },
+                "status": "Completed"
+            }
+        ]
+    },
+    "eligible": true,
+    "entry_status": "Finished with agent errors",
+    "labels": [
+        "Avg. driving score",
+        "Avg. route completion",
+        "Avg. infraction penalty",
+        "Collisions with pedestrians",
+        "Collisions with vehicles",
+        "Collisions with layout",
+        "Red lights infractions",
+        "Stop sign infractions",
+        "Off-road infractions",
+        "Route deviations",
+        "Route timeouts",
+        "Agent blocked"
+    ],
+    "sensors": [
+        "carla_camera",
+        "carla_camera",
+        "carla_imu",
+        "carla_gnss",
+        "carla_speedometer"
+    ],
+    "values": [
+        "0.000",
+        "97.287",
+        "0.000",
+        "0.000",
+        "2.088",
+        "0.065",
+        "0.325",
+        "0.382",
+        "0.080",
+        "0.000",
+        "0.000",
+        "0.015"
+    ]
+}
