@@ -18,7 +18,8 @@ export RESUME=True
 
 # TCP evaluation
 # export ROUTES=leaderboard/data/evaluation_routes/routes_lav_valid_1_route_town02_00.xml
-export ROUTES=leaderboard/data/evaluation_routes/routes_lav_valid_town05_second.xml
+# export ROUTES=leaderboard/data/evaluation_routes/routes_lav_valid_town05_second.xml
+export ROUTES=leaderboard/data/evaluation_routes/routes_lav_valid_1_route_town02_00.xml
 # export ROUTES=leaderboard/data/evaluation_routes/routes_lav_valid_town05_first.xml
 # export ROUTES=leaderboard/data/evaluation_routes/routes_lav_valid.xml
 export TEAM_AGENT=team_code/tcp_agent.py
@@ -29,13 +30,14 @@ export SCENARIOS=leaderboard/data/scenarios/all_towns_traffic_scenarios.json
 
 # export CUDA_VISIBLE_DEVICES=-1
 # JPEG | J2K | BPG | JSCC | AE
-export MODEL_TYPE=J2K
+export MODEL_TYPE=JSCC
 # For JPEG and J2K, higher is better. For BPG lower is better.
 export QUALITY=70
 # Only for JSCC
 export PATH_VAE_MODEL=/home/eidos/Warehouse/Teledriving/model_Infocom2024/VAE/ae_noNorm_snr0/ae_model_epoch_30_iter_355380.pth
 # Log
 export USE_WANDB=False
+export USE_PYQTGRAPH=True
 # Gym
 # export FIFO_PATH=/home/eidos/Workspace/GitKraken_ws/meta_driving/fifo_space
 

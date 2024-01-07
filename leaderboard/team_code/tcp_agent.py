@@ -61,18 +61,18 @@ from models.ae.ae_model import AE
 from typing import Dict, List, Tuple, Union, Callable, Iterable, Any
 
 PATH_VAE_MODEL = os.environ.get('PATH_VAE_MODEL', None)
-PATH_CH_MODEL =  os.environ.get('PATH_CH_MODEL', None)  
 SAVE_PATH = os.environ.get('SAVE_PATH', None)
-TCP_PERCEPTION = os.environ.get('TCP_PERCEPTION', None)
-TCP_MEASUREMENT = os.environ.get('TCP_MEASUREMENT', None)
 MODEL_TYPE = os.environ.get('MODEL_TYPE', None)
-MODE_PRECISION = os.environ.get('MODE_PRECISION', None)
-
 QUALITY = int(os.environ.get('QUALITY', None))
 
 USE_WANDB = os.environ.get('USE_WANDB', None)
 if USE_WANDB == 'True':
     import wandb
+USE_PYQTGRAPH = os.environ.get('USE_PYQTGRAPH', None)
+if USE_PYQTGRAPH == 'True':
+    from PyQt5.QtWidgets import (QWidget, QSlider, 
+                                 QLabel, QApplication, QHBoxLayout, QVBoxLayout, QPushButton)
+    from tools.pyqt_manager import ImageManager
 # ========================================================================>
 
 def get_entry_point():
@@ -169,6 +169,10 @@ class TCPAgent(autonomous_agent.AutonomousAgent):
         else:
             print('The MODEL_TYPE is invalid.')
             exit()
+        
+        if USE_PYQTGRAPH == 'True':
+            app = QApplication(sys.argv)
+            self.image_manager = ImageManager()
         
         self.img_last = None
 
@@ -322,6 +326,8 @@ class TCPAgent(autonomous_agent.AutonomousAgent):
                 rgb, tick_data = self.__2nd_process(tick_data, state, rgb)
             elif MODEL_TYPE in ['JPEG', 'J2K', 'BPG']:
                 rgb, tick_data = self.__simple_process(tick_data, quality=QUALITY)
+        if USE_PYQTGRAPH == 'True':
+            self.image_manager.plot_img(tick_data['rgb'])
         # =========================>
         pred= self.net(rgb, state, target_point)
 
@@ -398,6 +404,8 @@ class TCPAgent(autonomous_agent.AutonomousAgent):
         torch.cuda.empty_cache()
         if USE_WANDB == 'True':
             wandb.log({'Time': time.time()})
+        if USE_PYQTGRAPH == 'True':
+            self.image_manager.destroy()
     
     def __2nd_process(self, tick_data, state, rgb_tcp):
         # Change the channel from H*W*C to C*H*W
