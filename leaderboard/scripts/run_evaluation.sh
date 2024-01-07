@@ -34,7 +34,9 @@ export MODEL_TYPE=JSCC
 # For JPEG and J2K, higher is better. For BPG lower is better.
 export QUALITY=70
 # Only for JSCC
-export PATH_VAE_MODEL=/home/eidos/Warehouse/Teledriving/model_Infocom2024/VAE/ae_noNorm_snr0/ae_model_epoch_30_iter_355380.pth
+# export PATH_VAE_MODEL=/home/eidos/Warehouse/Teledriving/model_Infocom2024/VAE/ae_noNorm_snr0/ae_model_epoch_30_iter_355380.pth
+export PATH_VAE_MODEL=/home/eidos/Warehouse/Teledriving/model/SVAE_ICCV/svae_rec_kl_percep_action_10ep/tcp_carla_brec_1_bkl_1_bpec_200_bact_4096_model_epoch_10_iter_236910.pth
+# export PATH_VAE_MODEL=/home/eidos/Warehouse/Teledriving/model/SVAE_ICCV/svae_rec_kl_20ep/tcp_carla_brec_1_bkl_1_bpec_200_bact_4096_model_epoch_20_iter_331674.pth
 # Log
 export USE_WANDB=False
 export USE_PYQTGRAPH=True

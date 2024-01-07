@@ -46,7 +46,7 @@ if not top_path_tcp_jscc in sys.path:
     sys.path.append(top_path_tcp_jscc)
 
 from tools.common_tools import info_show
-from models.svae.svae_model import SoftIntroVAE
+from models.svae.svae_model_old import SoftIntroVAE
 from models.channel.channel_network import ChannelCodec
 from models.channel.channel_physical import Channels
 from models.jpeg.jpeg_model import JPEG
