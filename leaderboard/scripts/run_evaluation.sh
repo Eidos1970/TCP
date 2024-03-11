@@ -18,8 +18,8 @@ export RESUME=True
 
 # TCP evaluation
 # export ROUTES=leaderboard/data/evaluation_routes/routes_lav_valid_1_route_town02_00.xml
-# export ROUTES=leaderboard/data/evaluation_routes/routes_lav_valid_town05_second.xml
-export ROUTES=leaderboard/data/evaluation_routes/routes_lav_valid_1_route_town02_00.xml
+export ROUTES=leaderboard/data/evaluation_routes/routes_lav_valid_town05_second.xml
+# export ROUTES=leaderboard/data/evaluation_routes/routes_lav_valid_1_route_town02_00.xml
 # export ROUTES=leaderboard/data/evaluation_routes/routes_lav_valid_town05_first.xml
 # export ROUTES=leaderboard/data/evaluation_routes/routes_lav_valid.xml
 export TEAM_AGENT=team_code/tcp_agent.py
@@ -30,9 +30,9 @@ export SCENARIOS=leaderboard/data/scenarios/all_towns_traffic_scenarios.json
 
 # export CUDA_VISIBLE_DEVICES=-1
 # JPEG | J2K | BPG | JSCC | AE
-export MODEL_TYPE=JSCC
+export MODEL_TYPE=BPG
 # For JPEG and J2K, higher is better. For BPG lower is better.
-export QUALITY=70
+export QUALITY=29
 # Only for JSCC
 # export PATH_VAE_MODEL=/home/eidos/Warehouse/Teledriving/model_Infocom2024/VAE/ae_noNorm_snr0/ae_model_epoch_30_iter_355380.pth
 export PATH_VAE_MODEL=/home/eidos/Warehouse/Teledriving/model/SVAE_ICCV/svae_rec_kl_percep_action_10ep/tcp_carla_brec_1_bkl_1_bpec_200_bact_4096_model_epoch_10_iter_236910.pth

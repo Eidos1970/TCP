@@ -1,8 +1,8 @@
 # Communication parameters
 common: &common
-  noise_type: 'AWGN' # AWGN, Rayleigh, Rician
+  noise_type: 'Rayleigh' # AWGN, Rayleigh, Rician
   k_ratio: 0 # For Rayleigh channel
-  snr_db: 4
+  snr_db: 10
 tradicom:
   n_ldpc: 6144
   k_ldpc: 2048

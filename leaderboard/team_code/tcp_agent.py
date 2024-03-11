@@ -446,11 +446,16 @@ class TCPAgent(autonomous_agent.AutonomousAgent):
         # channel coding -> modulation -> channel -> demodulation -> channel decoding
         bits_tensor = self.tradicom.padding_bits(bits_tensor)
         if self.img_last is None:
-            bits_tensor = self.tradicom.e2e_com(bits_tensor, 30)
+            bits_tensor = self.tradicom.e2e_com(bits_tensor, 30, com_params['tradicom']['noise_type'])
         else:
-            bits_tensor = self.tradicom.e2e_com(bits_tensor, com_params['tradicom']['snr_db'])
+            bits_tensor = self.tradicom.e2e_com(bits_tensor, com_params['tradicom']['snr_db'], 
+                                                com_params['tradicom']['noise_type'])
         # source decoding
-        rgb_recon = self.codec.decode(bits_tensor, bits_length)
+        try:
+            rgb_recon = self.codec.decode(bits_tensor, bits_length)
+        except:
+            rgb_recon = self.img_last
+        
         # initialize the last image
         if self.img_last is None:
             self.img_last = copy.deepcopy(rgb_recon)
