@@ -17,8 +17,8 @@ export REPETITIONS=1 # multiple evaluation runs
 export RESUME=True
 
 # TCP evaluation
-# export ROUTES=leaderboard/data/evaluation_routes/routes_lav_valid_1_route_town02_00.xml
-export ROUTES=leaderboard/data/evaluation_routes/routes_lav_valid_town05_second.xml
+export ROUTES=leaderboard/data/evaluation_routes/routes_lav_valid_1_route_town02_00.xml
+# export ROUTES=leaderboard/data/evaluation_routes/routes_lav_valid_town05_second.xml
 # export ROUTES=leaderboard/data/evaluation_routes/routes_lav_valid_1_route_town02_00.xml
 # export ROUTES=leaderboard/data/evaluation_routes/routes_lav_valid_town05_first.xml
 # export ROUTES=leaderboard/data/evaluation_routes/routes_lav_valid.xml
@@ -30,13 +30,12 @@ export SCENARIOS=leaderboard/data/scenarios/all_towns_traffic_scenarios.json
 
 # export CUDA_VISIBLE_DEVICES=-1
 # JPEG | J2K | BPG | JSCC | AE
-export MODEL_TYPE=BPG
+export MODEL_TYPE=JSCC
 # For JPEG and J2K, higher is better. For BPG lower is better.
 export QUALITY=29
 # Only for JSCC
-# export PATH_VAE_MODEL=/home/eidos/Warehouse/Teledriving/model_Infocom2024/VAE/ae_noNorm_snr0/ae_model_epoch_30_iter_355380.pth
-export PATH_VAE_MODEL=/home/eidos/Warehouse/Teledriving/model/SVAE_ICCV/svae_rec_kl_percep_action_10ep/tcp_carla_brec_1_bkl_1_bpec_200_bact_4096_model_epoch_10_iter_236910.pth
-# export PATH_VAE_MODEL=/home/eidos/Warehouse/Teledriving/model/SVAE_ICCV/svae_rec_kl_20ep/tcp_carla_brec_1_bkl_1_bpec_200_bact_4096_model_epoch_20_iter_331674.pth
+export JSCC_TYPE=VAE # VAE | VAE_TCP | VAE_QAM | VAE_QAM_TCP | AE
+export PATH_VAE_MODEL=/home/eidos/Warehouse/Teledriving/model_JSAC_2024/VAE/vae_baseline/vae_model_epoch_35.pth
 # Log
 export USE_WANDB=False
 export USE_PYQTGRAPH=True

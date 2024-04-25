@@ -1,6 +1,6 @@
 # Communication parameters
 common: &common
-  noise_type: 'Rayleigh' # AWGN, Rayleigh, Rician
+  noise_type: 'AWGN' # AWGN, Rayleigh, Rician
   k_ratio: 0 # For Rayleigh channel
   snr_db: 10
 tradicom:
@@ -11,7 +11,15 @@ tradicom:
   ldpc_cn_type: 'boxplus'
   <<: *common
 jscc:
-  zdim: 1024
+  zdim: 2048
+  channels: [64, 128, 256, 512, 512, 512]
+  n_res_block: 2
+  dim_cond: 0
+  type_upsample: 'upsample'
+  # QAM
+  n_qam: 64
+  length_edge: 4
+  # Power
   power: null # number or null 
   use_power_norm: False
   <<: *common

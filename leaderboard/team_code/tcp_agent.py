@@ -44,9 +44,13 @@ with open('./config/com_params.yml') as f:
 top_path_tcp_jscc = dic_path['rootPath_TCP_JSCC']
 if not top_path_tcp_jscc in sys.path:
     sys.path.append(top_path_tcp_jscc)
+print(sys.path)
 
 from tools.common_tools import info_show
-from models.svae.svae_model_old import SoftIntroVAE
+# from models.svae.svae_model_old import SoftIntroVAE
+from models.svae.svae_model import VAE
+from models.svae.vaetcp_model import VAE_TCP
+from models.svae.vae_qam_model import VAE_QAM, VAE_QAM_TCP
 from models.channel.channel_network import ChannelCodec
 from models.channel.channel_physical import Channels
 from models.jpeg.jpeg_model import JPEG
@@ -64,6 +68,9 @@ PATH_VAE_MODEL = os.environ.get('PATH_VAE_MODEL', None)
 SAVE_PATH = os.environ.get('SAVE_PATH', None)
 MODEL_TYPE = os.environ.get('MODEL_TYPE', None)
 QUALITY = int(os.environ.get('QUALITY', None))
+
+if MODEL_TYPE == 'JSCC':
+    JSCC_TYPE = os.environ.get('JSCC_TYPE', None)
 
 USE_WANDB = os.environ.get('USE_WANDB', None)
 if USE_WANDB == 'True':
@@ -139,15 +146,39 @@ class TCPAgent(autonomous_agent.AutonomousAgent):
                 self.codec = J2K()
             elif MODEL_TYPE == 'BPG':
                 self.codec = BPG()
-            elif MODEL_TYPE == 'JSCC' or MODEL_TYPE == 'AE':
+            elif MODEL_TYPE == 'JSCC':
                 self.device = torch.device('cuda:0')
-                if MODEL_TYPE == 'JSCC':
-                    self.codec = SoftIntroVAE(cdim=3, zdim=com_params['jscc']['zdim'], 
-                                                channels=[64, 128, 256, 512, 512, 512], 
-                                                image_size=(256,900))
-                else:
+                if JSCC_TYPE == 'VAE':
+                    self.codec = VAE(cdim=3, zdim=com_params['jscc']['zdim'], 
+                                    channels=com_params['jscc']['channels'], 
+                                    image_size=(256,900), n_res_block=com_params['jscc']['n_res_block'],
+                                    dim_cond=com_params['jscc']['dim_cond'], 
+                                    type_upsample=com_params['jscc']['type_upsample'])
+                elif JSCC_TYPE == 'VAE_TCP':
+                    self.codec = VAE_TCP(cdim=3, zdim=com_params['jscc']['zdim'], 
+                                    channels=com_params['jscc']['channels'], 
+                                    image_size=(256,900), n_res_block=com_params['jscc']['n_res_block'],
+                                    dim_cond=com_params['jscc']['dim_cond'], 
+                                    type_upsample=com_params['jscc']['type_upsample'], tcp_model_path=None)
+                elif JSCC_TYPE == 'VAE_QAM':
+                    self.codec = VAE_QAM(cdim=3, zdim=com_params['jscc']['zdim'], 
+                                    channels=com_params['jscc']['channels'], 
+                                    image_size=(256,900), n_res_block=com_params['jscc']['n_res_block'],
+                                    dim_cond=com_params['jscc']['dim_cond'], 
+                                    type_upsample=com_params['jscc']['type_upsample'],
+                                    n_qam=com_params['jscc']['n_qam'], length_edge=com_params['jscc']['length_edge'])
+                elif JSCC_TYPE == 'VAE_QAM_TCP':
+                    self.codec = VAE_QAM_TCP(cdim=3, zdim=com_params['jscc']['zdim'],
+                                    channels=com_params['jscc']['channels'], 
+                                    image_size=(256,900), n_res_block=com_params['jscc']['n_res_block'],
+                                    dim_cond=com_params['jscc']['dim_cond'], 
+                                    type_upsample=com_params['jscc']['type_upsample'],
+                                    n_qam=com_params['jscc']['n_qam'], length_edge=com_params['jscc']['length_edge'],
+                                    tcp_model_path=None)
+                elif JSCC_TYPE == 'AE':
+                    # TODO: AE model
                     self.codec = AE(cdim=3, zdim=com_params['jscc']['zdim'], 
-                                channels=[64, 128, 256, 512, 512, 512], 
+                                channels=com_params['jscc']['channels'], 
                                 image_size=(256,900))
                 self.codec.to(self.device)
                 weights = torch.load(PATH_VAE_MODEL, map_location=self.device)
@@ -322,7 +353,7 @@ class TCPAgent(autonomous_agent.AutonomousAgent):
         
         # <=========================
         with torch.no_grad():
-            if MODEL_TYPE == 'JSCC' or MODEL_TYPE == 'AE':
+            if MODEL_TYPE == 'JSCC':
                 rgb, tick_data = self.__2nd_process(tick_data, state, rgb)
             elif MODEL_TYPE in ['JPEG', 'J2K', 'BPG']:
                 rgb, tick_data = self.__simple_process(tick_data, quality=QUALITY)
@@ -420,14 +451,14 @@ class TCPAgent(autonomous_agent.AutonomousAgent):
         # img_z = reparameterize(img_mu, img_logvar)
         if com_params['jscc']['use_power_norm']:
             img_mu = power_norm(img_mu, torch.tensor(com_params['jscc']['power']))
-        # Channel
-        if com_params['jscc']['noise_type'] == 'AWGN':
-            img_mu_rec = self.channel_phy.awgn(img_mu, com_params['jscc']['snr_db'], com_params['jscc']['power'])
-        # elif com_params['jscc']['noise_type'] == 'Rayleigh' or com_params['jscc']['noise_type'] == 'Rician':
-        #     img_mu_rec = self.channel_phy.fading(img_mu, com_params['jscc']['snr_db'], K=com_params['jscc']['k_ratio'])
-        else:
-            print('No noise is added!')
-            img_mu_rec = img_mu
+        # # Channel
+        # if com_params['jscc']['noise_type'] == 'AWGN':
+        #     img_mu_rec = self.channel_phy.awgn(img_mu, com_params['jscc']['snr_db'], com_params['jscc']['power'])
+        # # elif com_params['jscc']['noise_type'] == 'Rayleigh' or com_params['jscc']['noise_type'] == 'Rician':
+        # #     img_mu_rec = self.channel_phy.fading(img_mu, com_params['jscc']['snr_db'], K=com_params['jscc']['k_ratio'])
+        # else:
+        #     print('No noise is added!')
+        img_mu_rec = img_mu
         
         batch_img_rec = self.codec.decode(img_mu_rec)
         # For saving
