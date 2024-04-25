@@ -19,6 +19,7 @@ jscc:
   # QAM
   n_qam: 64
   length_edge: 4
+  detector: 'LS' # 'LS', 'MMSE'
   # Power
   power: null # number or null 
   use_power_norm: False

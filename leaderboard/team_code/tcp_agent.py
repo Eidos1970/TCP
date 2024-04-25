@@ -60,6 +60,7 @@ from models.bpg.bpg_model import BPG
 from tools.dataset_tcp import NormalizeManager
 from tools.common_tools import reparameterize
 from models.ae.ae_model import AE
+from tools.communication_utils import snr2std, awgn, fading, CSI_detection, real2complex, complex2real
 # from pythae_ex.models import AutoModel_Ex
 # typing
 from typing import Dict, List, Tuple, Union, Callable, Iterable, Any
@@ -452,13 +453,24 @@ class TCPAgent(autonomous_agent.AutonomousAgent):
         if com_params['jscc']['use_power_norm']:
             img_mu = power_norm(img_mu, torch.tensor(com_params['jscc']['power']))
         # # Channel
-        # if com_params['jscc']['noise_type'] == 'AWGN':
+        if com_params['jscc']['noise_type'] == 'AWGN':
+            img_mu_complex = real2complex(img_mu)
+            n_std = snr2std(img_mu_complex, com_params['jscc']['snr_db'])
+            y_complex = awgn(img_mu_complex, n_std)
+            img_mu_rec = complex2real(y_complex)
         #     img_mu_rec = self.channel_phy.awgn(img_mu, com_params['jscc']['snr_db'], com_params['jscc']['power'])
-        # # elif com_params['jscc']['noise_type'] == 'Rayleigh' or com_params['jscc']['noise_type'] == 'Rician':
+        elif com_params['jscc']['noise_type'] == 'Rayleigh' or com_params['jscc']['noise_type'] == 'Rician':
+            img_mu_complex = real2complex(img_mu)
+            # TODO: add k_ratio
+            y_fading, h_complex = fading(img_mu_complex)
+            n_std = snr2std(y_fading, com_params['jscc']['snr_db'])
+            y_complex = awgn(y_fading, n_std)
+            y_detected = CSI_detection(y_complex, h_complex, n_std, com_params['jscc']['detector'])
+            img_mu_rec = complex2real(y_detected)
         # #     img_mu_rec = self.channel_phy.fading(img_mu, com_params['jscc']['snr_db'], K=com_params['jscc']['k_ratio'])
-        # else:
-        #     print('No noise is added!')
-        img_mu_rec = img_mu
+        else:
+            print('No noise is added!')
+            img_mu_rec = img_mu
         
         batch_img_rec = self.codec.decode(img_mu_rec)
         # For saving
