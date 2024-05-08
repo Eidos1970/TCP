@@ -431,7 +431,7 @@ class TCPAgent(autonomous_agent.AutonomousAgent):
 
     def destroy(self):
         del self.net
-        if PATH_VAE_MODEL is not None:
+        if MODEL_TYPE in ['JSCC']:
             del self.codec
         torch.cuda.empty_cache()
         if USE_WANDB == 'True':
