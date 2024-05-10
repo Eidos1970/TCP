@@ -30,16 +30,16 @@ export SCENARIOS=leaderboard/data/scenarios/all_towns_traffic_scenarios.json
 
 # export CUDA_VISIBLE_DEVICES=-1
 # JPEG | J2K | BPG | JSCC | AE | ORIGIN
-export MODEL_TYPE=ORIGIN
+export MODEL_TYPE=JSCC
 # For JPEG and J2K, higher is better. For BPG lower is better.
 export QUALITY=29
 # Only for JSCC
 export JSCC_TYPE=VAE_TCP # VAE | VAE_TCP | VAE_QAM | VAE_QAM_TCP | AE
 # export PATH_VAE_MODEL=/home/eidos/Warehouse/Teledriving/model_JSAC_2024/VAE/vae_baseline/vae_model_epoch_35.pth
-export PATH_VAE_MODEL=/home/eidos/Warehouse/Teledriving/model_Infocom2024/VAE/vae_tcp_norm_z4096/vae_model_epoch_20_iter_473820.pth
+export PATH_VAE_MODEL=/home/eidos/Warehouse/Teledriving/model_JSAC_2024/VAE/vae_act8192_baseline_onlyT05_z2048_nres2_ep80_lr4e-5/vae_tcp_model_epoch_50.pth
 # Log
 export USE_WANDB=False
-export USE_PYQTGRAPH=False
+export USE_PYQTGRAPH=True
 # Gym
 # export FIFO_PATH=/home/eidos/Workspace/GitKraken_ws/meta_driving/fifo_space
 

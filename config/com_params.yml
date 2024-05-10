@@ -11,7 +11,7 @@ tradicom:
   ldpc_cn_type: 'boxplus'
   <<: *common
 jscc:
-  zdim: 4096
+  zdim: 2048
   channels: [64, 128, 256, 512, 512, 512]
   n_res_block: 2
   dim_cond: 0

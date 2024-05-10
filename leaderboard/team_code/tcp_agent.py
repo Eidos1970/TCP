@@ -203,7 +203,7 @@ class TCPAgent(autonomous_agent.AutonomousAgent):
             exit()
         
         if USE_PYQTGRAPH == 'True':
-            app = QApplication(sys.argv)
+            self.app = QApplication(sys.argv)
             self.image_manager = ImageManager()
         
         self.img_last = None
@@ -438,6 +438,7 @@ class TCPAgent(autonomous_agent.AutonomousAgent):
             wandb.log({'Time': time.time()})
         if USE_PYQTGRAPH == 'True':
             self.image_manager.destroy()
+            self.app.quit()
     
     def __2nd_process(self, tick_data, state, rgb_tcp):
         # Change the channel from H*W*C to C*H*W
